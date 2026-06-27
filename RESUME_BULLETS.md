@@ -2,51 +2,73 @@
 
 ## 中文版
 
-### 版本 A（完整版，适合作品集/详细简历）
+### 偏 AI 产品经理
 
-1. **AI Builder OS 综合工作台**：独立设计并开发面向 AI 产品工程师的综合工作台，整合 100 个 AI 项目模板（七维度评分体系）、100 个客户接单案例（规则引擎分析）、200 个自动化工作流模板和 600 条 AI 评测用例（6 类覆盖 RAG/安全/幻觉），实现项目筛选、客户分析、方案生成和质量评测一体化，数据总量 1,000 条。
+1. **AI Builder OS 综合工作台**：独立设计面向 AI 产品工程师的综合工作台产品，整合 4 个异构数据源（100 AI 项目、100 客户案例、200 工作流模板、600 评测用例）为 1,000 条统一结构化数据，设计 7 页面信息架构覆盖项目发现、客户分析、方案生成、质量评测和作品集包装全流程。
 
-2. **智能客户接单分析系统**：基于 100 个真实客户模拟案例构建规则引擎，输入客户原始描述即可输出客户类型分类、表面/真实/隐藏需求三层分析、风险评估、产品包推荐、报价策略、SOW 草案和验收标准，覆盖 12 种客户类型，将接单决策流程从 2 小时压缩至 5 分钟。
+2. **客户接单分析产品设计**：基于 100 个真实客户模拟案例（覆盖 12 种客户类型）设计规则引擎驱动的客户分析系统，输入客户原始描述输出三层需求分析（表面/真实/隐藏）、风险评估、产品包推荐、报价策略和 SOW 草案，将接单决策流程标准化。
 
-3. **AI 评测基准集成**：整合 600 条多维度 AI 评测用例，覆盖 RAG 检索准确性、多轮对话一致性、工具调用正确性、幻觉检测、安全边界和恶意输入防御 6 个维度，支持 Mock 和 OpenAI-compatible Provider 双模式，为 AI 应用质量提供结构化评估框架。
+3. **AI 评测体系设计**：设计并整合 600 条多维度 AI 评测基准（RAG 检索、多轮对话、工具调用、幻觉检测、安全边界、恶意输入 6 类 × 100 条），定义评测维度、通过标准和报告格式，预留 OpenAI-compatible Provider 接口支持 Mock 和真实 LLM 双模式。
 
-4. **全栈技术实现**：Next.js 16 App Router + TypeScript（零 any 类型）+ Tailwind CSS，深色玻璃拟态主题，响应式侧边栏导航，1,000 条数据本地 JSON 静态导入，npm run build 零错误，5.2 秒完成编译。
+### 偏 AI 应用工程
 
-### 版本 B（精简版，适合标准简历）
+1. **全栈 AI 工作台开发**：使用 Next.js 16 App Router + TypeScript（strict mode，零 any 类型）+ Tailwind CSS 构建 7 页面综合工作台，实现静态生成、深色玻璃拟态主题、响应式侧边栏导航，1,000 条数据本地 JSON 加载，npm run build 零错误。
 
-1. **AI Builder OS**：整合 100 个 AI 项目、100 个客户案例、200 个工作流和 600 条评测用例的综合工作台，覆盖项目发现、客户分析、方案生成和质量评估全链路（Next.js + TypeScript + Tailwind CSS）。
+2. **结构化数据工程**：从 Markdown 文档、JSON 数据、TypeScript CLI 等 4 个异构数据源提取并统一 1,000 条结构化数据，编写 Python 提取脚本处理复杂嵌套字段（列表、对象、评分矩阵），定义完整 TypeScript 接口确保类型安全。
 
-2. **客户分析引擎**：基于 100 个模拟案例的规则引擎，输入客户原话输出需求分析、风险评估、报价策略和 SOW 草案，覆盖 12 种客户类型。
+3. **前端规则引擎与模板生成**：实现纯前端客户分析规则引擎（关键词匹配 + 模式识别），不依赖外部 LLM；实现简历/作品集/SOW 文案模板生成系统，基于真实项目数据自动填充，支持一键复制。
 
-3. **AI 评测平台**：600 条评测用例（RAG/对话/工具/幻觉/安全/恶意输入），支持 Mock 和 OpenAI-compatible Provider 双模式。
+### 偏创业/自由职业
+
+1. **AI 接单工作台**：构建整合 100 个 AI 项目模板、100 个客户案例、200 个工作流方案和 600 条评测用例的综合工作台，覆盖从客户分析、方案匹配、报价策略到质量评估的接单全流程。
+
+2. **客户分析与报价系统**：基于 100 个真实客户案例构建分析引擎，输入客户原话即可输出需求判断、风险评估、产品包推荐和报价策略，覆盖小公司老板、企业管理层、自由职业者等 12 种客户类型。
+
+3. **AI 项目库与工作流目录**：整理 100 个可开发的 AI 项目（七维度评分体系）和 200 个自动化工作流模板，每个项目包含 MVP 范围、技术栈、部署方案和变现路径，每个工作流包含完整工具链和 Prompt 模板。
 
 ---
 
 ## English Version
 
-### Version A (Detailed)
+### AI Product Manager Focus
 
-1. **AI Builder OS Comprehensive Workbench**: Independently designed and developed an integrated workbench for AI product engineers, combining 100 AI project templates (7-dimension scoring), 100 client acquisition cases (rule-based analysis engine), 200 automation workflow templates, and 600 AI evaluation test cases across 6 categories (RAG, safety, hallucination, tool use). Total data volume: 1,000 structured entries.
+1. **AI Builder OS Product Design**: Independently designed an integrated workbench for AI product engineers, integrating 4 heterogeneous data sources (100 AI projects, 100 client cases, 200 workflow templates, 600 eval cases) into 1,000 unified structured data entries, with a 7-page information architecture covering project discovery, client analysis, solution generation, quality assessment, and portfolio packaging.
 
-2. **Intelligent Client Intake Analysis Engine**: Built a rule-based analysis system trained on 100 simulated client cases covering 12 client types. Input client's raw message to receive three-layer needs analysis (surface/real/hidden), risk assessment, product recommendation, pricing strategy, SOW draft, and acceptance criteria — reducing intake decision time from 2 hours to 5 minutes.
+2. **Client Intake Analysis System**: Designed a rule-based client analysis system trained on 100 simulated client cases across 12 client types, generating three-layer needs analysis (surface/real/hidden), risk assessment, product recommendations, pricing strategy, and SOW drafts from raw client descriptions.
 
-3. **AI Evaluation Benchmark Platform**: Integrated 600 multi-dimensional AI test cases across 6 categories (RAG retrieval, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input) with dual-mode support for Mock and OpenAI-compatible providers, providing a structured quality assessment framework for AI applications.
+3. **AI Evaluation Framework**: Designed and integrated 600 multi-dimensional AI evaluation benchmarks across 6 categories (RAG retrieval, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input), defining evaluation dimensions, pass criteria, and report formats with OpenAI-compatible Provider interface for dual Mock/LLM modes.
 
-4. **Full-Stack Technical Implementation**: Built with Next.js 16 App Router, TypeScript (zero `any` types), and Tailwind CSS featuring dark glass-morphism theme, responsive sidebar navigation, and 1,000 data entries loaded from local JSON with zero external runtime dependencies.
+### AI Application Engineering Focus
 
-### Version B (Concise)
+1. **Full-Stack AI Workbench**: Built a 7-page integrated workbench with Next.js 16 App Router, TypeScript (strict mode, zero `any` types), and Tailwind CSS, featuring static generation, dark glass-morphism theme, responsive sidebar navigation, and 1,000 data entries loaded from local JSON with zero external runtime dependencies.
 
-1. **AI Builder OS**: Integrated workbench combining 100 AI projects, 100 client cases, 200 workflows, and 600 eval cases covering project discovery, client analysis, solution generation, and quality assessment (Next.js + TypeScript + Tailwind CSS).
+2. **Structured Data Engineering**: Extracted and unified 1,000 structured data entries from 4 heterogeneous sources (Markdown docs, JSON data, TypeScript CLI, Next.js apps), writing Python extraction scripts for complex nested fields and defining complete TypeScript interfaces for type safety.
 
-2. **Client Analysis Engine**: Rule-based engine trained on 100 simulated cases, analyzing client messages for needs, risks, pricing, and SOW generation across 12 client types.
+3. **Frontend Rule Engine & Template Generation**: Implemented a client-side rule engine (keyword matching + pattern recognition) for client analysis without external LLM dependencies; built template-based resume/portfolio/SOW generation system with real project data auto-fill and one-click copy.
 
-3. **AI Eval Platform**: 600 test cases across 6 categories (RAG, dialogue, tool use, hallucination, safety, malicious input) with Mock and OpenAI-compatible Provider modes.
+### Freelance/Startup Focus
+
+1. **AI Client Acquisition Workbench**: Built an integrated workbench combining 100 AI project templates, 100 client cases, 200 workflow solutions, and 600 eval test cases, covering the full client acquisition workflow from analysis to delivery.
+
+2. **Client Analysis & Pricing Engine**: Constructed an analysis engine from 100 real client cases, outputting needs assessment, risk evaluation, product recommendations, and pricing strategy from client's raw message across 12 client types.
+
+3. **AI Project Library & Workflow Catalog**: Curated 100 developable AI projects (7-dimension scoring) and 200 automation workflow templates, each with MVP scope, tech stack, deployment plan, and monetization path.
 
 ---
 
 ## 使用建议
 
-- **投简历**：用版本 B，3 条 bullets 够了
-- **作品集网站**：用版本 A，展示深度
-- **面试自我介绍**：用版本 A 的第 1 条 + 第 2 条组合
-- **LinkedIn**：用英文版本 A 的第 1 条作为 About 开头
+| 场景 | 推荐版本 | 条数 |
+|------|---------|------|
+| AI 产品经理简历 | 偏 PM 版 3 条 | 3 |
+| AI 工程师简历 | 偏工程版 3 条 | 3 |
+| 自由职业/接单简历 | 偏创业版 3 条 | 3 |
+| 作品集详细展示 | 全部 9 条 | 9 |
+| LinkedIn About | 英文 PM 版第 1 条 | 1 |
+
+## 注意事项
+
+- 不要写"接入了 OpenAI API"，写"预留 OpenAI-compatible Provider 接口"
+- 不要写"AI 驱动的客户分析"，写"规则引擎驱动的客户分析"
+- 不要写"1,126 条数据"，写"1,000 条结构化数据"
+- 不要写"600 条评测用例已运行"，写"600 条评测用例，支持 Mock 和 LLM 双模式"

@@ -141,7 +141,26 @@ Or connect your GitHub repo to [vercel.com](https://vercel.com) for automatic de
 
 ## Screenshots
 
-> Screenshots will be added after visual QA.
+### Dashboard
+![Dashboard](screenshots/01-dashboard.png)
+
+### AI Project Library
+![AI Projects](screenshots/02-projects.png)
+
+### Client Intake Analysis
+![Client Intake](screenshots/03-intake.png)
+
+### Workflow Templates
+![Workflows](screenshots/04-workflows.png)
+
+### AI Eval Bench
+![Eval](screenshots/05-eval.png)
+
+### Portfolio Generator
+![Portfolio](screenshots/06-portfolio.png)
+
+### Mobile Responsive
+![Mobile Dashboard](screenshots/08-mobile-dashboard.png)
 
 ---
 

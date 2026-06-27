@@ -1,85 +1,94 @@
 # Portfolio Copy — AI Builder OS
 
-作品集介绍文案，适用于 GitHub README、个人网站、LinkedIn 项目展示。
-
-## 一句话介绍
+## 一句话定位
 
 AI Builder OS — 面向 AI 产品工程师的综合工作台，整合项目库、客户分析、工作流模板和评测平台。
 
-## 短版介绍（100字）
+## 项目卡片短文案（适合作品集列表页）
 
-AI Builder OS 整合 100 个 AI 项目模板、100 个客户接单案例、200 个自动化工作流和 600 条 AI 评测用例，覆盖项目发现、客户分析、方案生成和质量评估全链路。Next.js 16 + TypeScript 构建，1,000 条结构化数据本地加载，零外部依赖。
+**AI Builder OS** — 整合 100 个 AI 项目、100 个客户案例、200 个工作流和 600 条评测用例的综合工作台。覆盖项目发现、客户分析、方案生成和质量评估全链路。Next.js 16 + TypeScript 构建，1,000 条结构化数据本地加载。
 
-## 中版介绍（300字）
+## 项目详情长文案
 
-**AI Builder OS** 是一个面向 AI 产品工程师和自由职业 AI 服务商的综合工作台。
+### 背景
 
-**核心模块：**
+AI 应用领域项目分散、工具碎片化。一个 AI 工程师想找到值得做的项目、接到合适的单子、用对工作流模板、评估系统质量，需要在 4-5 个不同工具和资料库之间切换，效率很低。
 
-- **AI 项目库**：100 个 AI 项目，每个包含七维度评分（简历价值、商业价值、技术成长、自由职业适配、可开发性、差异化、长期复用）、痛点分析、核心功能、技术栈、MVP 范围和部署方案。支持多维筛选和一键生成简历 bullets。
+### 解决方案
 
-- **客户接单分析**：基于 100 个真实客户模拟案例的规则引擎。输入客户原始描述，输出客户类型分类、三层需求分析（表面/真实/隐藏）、风险评估、产品包推荐、报价策略和 SOW 草案。覆盖 12 种客户类型。
+AI Builder OS 把这 4 个环节整合到一个工作台里：
 
-- **工作流模板库**：200 个 AI 自动化工作流，覆盖邮件、客服、内容、数据、销售等 20 个方向。每个工作流包含输入输出定义、工具链、API 接口、Prompt 模板和风险提示。
+1. **项目发现**：100 个 AI 项目，每个有七维度评分（简历价值、商业价值、技术成长、自由职业适配、可开发性、差异化、长期复用），支持多维筛选和一键生成简历/MVP/作品集文案。
 
-- **AI 评测平台**：600 条多维度评测用例，覆盖 RAG 检索、多轮对话、工具调用、幻觉检测、安全边界和恶意输入 6 个维度。支持 Mock 和 OpenAI-compatible Provider 双模式。
+2. **客户分析**：基于 100 个真实客户模拟案例构建的规则引擎。输入客户原始描述，输出客户类型、三层需求分析（表面/真实/隐藏）、风险评估、产品包推荐、报价策略和 SOW 草案。
 
-**技术栈：** Next.js 16 App Router + TypeScript + Tailwind CSS。深色玻璃拟态主题，响应式布局，1,000 条数据本地 JSON 加载，零外部运行时依赖。
+3. **工作流方案**：200 个 AI 自动化工作流模板，覆盖邮件、客服、内容、数据、销售等 20 个方向。每个模板包含完整的输入输出定义、工具链、API 接口和 Prompt 模板。
 
-## GitHub README
+4. **质量评测**：600 条多维度 AI 评测用例，覆盖 RAG 检索、多轮对话、工具调用、幻觉检测、安全边界和恶意输入 6 个维度。
 
-```markdown
-# AI Builder OS
+### 技术亮点
 
-> An integrated workbench for AI product engineers — combining project discovery, client analysis, workflow automation, and AI evaluation in one platform.
+- **Next.js 16 App Router**：静态生成，零服务器依赖
+- **TypeScript strict mode**：零 `any` 类型，完整类型安全
+- **深色玻璃拟态主题**：backdrop-blur + 半透明卡片 + 微光边框
+- **响应式布局**：桌面端侧边栏 + 移动端汉堡菜单
+- **本地 JSON 数据层**：1,000 条结构化数据，零外部依赖
+- **规则引擎**：客户分析不依赖 LLM，纯前端实现
+- **模板生成**：简历/作品集/SOW 文案基于真实数据模板填充
 
-## What It Does
+### 产品亮点
 
-| Module | Data | Function |
-|--------|------|----------|
-| AI Project Library | 100 projects | 7-dimension scoring, filtering, MVP plan generation |
-| Client Intake | 100 cases | Rule-based needs analysis, risk assessment, pricing |
-| Workflow Templates | 200 workflows | Search, filter, prompt copy, implementation blueprints |
-| AI Eval Bench | 600 test cases | 6 categories, Mock/Provider dual mode |
+- **数据整合能力**：4 个异构数据源（Markdown 文档、JSON 数据、TypeScript CLI、Next.js 应用）→ 1,000 条统一结构化数据
+- **信息架构设计**：7 个页面覆盖从项目发现到商业化交付的全流程
+- **交互设计**：搜索、筛选、排序、分页、详情弹窗、一键复制
+- **自动生成**：简历 bullets、STAR 面试讲法、MVP 计划、SOW 草案
 
-## Tech Stack
+### 数据亮点
 
-- **Framework**: Next.js 16 (App Router, Turbopack)
-- **Language**: TypeScript (zero `any` types)
-- **Styling**: Tailwind CSS (dark glass-morphism theme)
-- **Data**: Local JSON (1,000 entries, zero external dependencies)
+| 数据源 | 数量 | 来源 |
+|--------|------|------|
+| AI 项目 | 100 | 结构化 Markdown 提取（七维度评分） |
+| 客户案例 | 100 | 商业分析文档提取（12 种客户类型） |
+| 工作流模板 | 200 | 预构建自动化工作流目录 |
+| 评测用例 | 600 | 6 类 × 100 条 |
+| 产品包 | 14 | 服务产品定义 |
+| 客户画像 | 12 | 客户角色定义 |
+| **合计** | **1,000** | — |
 
-## Quick Start
+## 角色定制讲法
 
-```bash
-npm install
-npm run dev
-```
+### 适合 AI 产品经理怎么讲
 
-Open http://localhost:3000
+"这个项目展示了我作为 AI 产品经理的三个核心能力：
 
-## Pages
+第一，**数据整合**。我把 4 个不同来源的数据（Markdown 文档、JSON 数据、TypeScript CLI、Next.js 应用）整合成 1,000 条统一结构化数据，这需要理解每个数据源的结构、字段和质量。
 
-- `/` — Dashboard with stats and recommendations
-- `/projects` — 100 AI projects with search, filter, and detail views
-- `/intake` — Client analysis engine with 100 case studies
-- `/workflows` — 200 automation workflows with search and pagination
-- `/eval` — 600 AI evaluation test cases with mock runner
-- `/portfolio` — Auto-generated resume bullets and interview scripts
-- `/status` — Project status and data source inventory
-```
+第二，**信息架构设计**。7 个页面覆盖了 AI 产品工程师的完整工作流：项目发现、客户分析、方案生成、质量评测、作品集包装。每个页面都有明确的数据源、交互逻辑和输出物。
 
-## LinkedIn 项目描述
+第三，**产品化思维**。不是堆功能，而是解决真实问题。一个 AI 工程师想接单，需要查项目库、分析客户、找工作方案、评估系统质量——我把这 4 步压缩到一个界面里。"
 
-**AI Builder OS — AI 产品工程师综合工作台**
+### 适合 AI 应用工程怎么讲
 
-独立设计并开发的综合工作台，整合 4 个数据源（100 AI 项目、100 客户案例、200 工作流模板、600 评测用例）为统一平台。
+"这个项目展示了我在 AI 应用工程方面的技术能力：
 
-核心能力展示：
-• 数据工程：4 异构数据源 → 1,000 条统一结构化数据
-• 产品设计：7 页面信息架构 + 规则引擎分析
-• 全栈开发：Next.js 16 + TypeScript + Tailwind CSS
-• AI 评测：600 条多维度评测基准
-• 商业化：客户分析 + 报价策略 + SOW 生成
+第一，**全栈实现**。Next.js 16 + TypeScript + Tailwind CSS，静态生成，零服务器依赖，npm run build 零错误。
 
-技术栈：Next.js 16, TypeScript, Tailwind CSS, Local JSON
+第二，**数据工程**。从 4 个异构数据源提取 1,000 条结构化数据，包括 Python 提取脚本、TypeScript 类型定义、JSON 数据验证。
+
+第三，**规则引擎**。客户分析模块用纯前端规则引擎实现，不依赖外部 LLM，输入客户原话就能输出需求分析、风险评估和报价策略。
+
+第四，**评测框架**。600 条评测用例覆盖 6 个维度，预留 OpenAI-compatible Provider 接口，支持 Mock 和真实 LLM 双模式。"
+
+### 适合自由职业/接单怎么讲
+
+"这个项目本身就是我接单能力的证明：
+
+第一，**我懂客户**。100 个客户案例覆盖 12 种客户类型，每个案例都有沟通技巧、成交话术和风险提示。我用这些案例构建了客户分析引擎，输入客户原话就能判断值不值得接、该怎么报价。
+
+第二，**我懂方案**。200 个工作流模板覆盖 20 个方向，每个都有完整的工具链、API 接口和 Prompt 模板。客户说什么需求，我都能快速匹配工作方案。
+
+第三，**我懂交付**。100 个 AI 项目每个都有 MVP 范围、技术栈、部署方案和测试策略。从需求到交付，全流程有据可查。"
+
+## GitHub README 文案
+
+见 README.md

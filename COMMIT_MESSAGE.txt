@@ -1,0 +1,11 @@
+feat: AI Builder OS v1.0 — integrated workbench for AI product engineers
+
+- 100 AI projects with 7-dimension scoring and resume/MVP generation
+- 100 client cases with rule-based analysis engine
+- 200 workflow templates with search, filter, and prompt copy
+- 600 eval test cases across 6 categories (RAG, dialogue, tool, hallucination, safety, malicious)
+- 7 interactive pages: Dashboard, Projects, Intake, Workflows, Eval, Portfolio, Status
+- Next.js 16 + TypeScript (zero any) + Tailwind CSS
+- Dark glass-morphism theme with responsive sidebar
+- 1,000 structured data entries, zero external runtime dependencies
+- Mock mode default, OpenAI-compatible Provider interface ready
