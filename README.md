@@ -114,7 +114,7 @@ The project is designed to work fully offline with zero API keys. The OpenAI-com
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-builder-os.git
+git clone https://github.com/<your-github-username>/ai-builder-os.git
 cd ai-builder-os
 npm install
 npm run dev
