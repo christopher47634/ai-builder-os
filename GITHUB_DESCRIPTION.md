@@ -8,6 +8,10 @@ AI Builder OS：面向 AI 产品工程师的综合工作台，整合 100 个 AI 
 
 面向 AI 产品经理 / AI 应用工程师 / 自由职业 AI 服务商的综合工作台：项目筛选、客户接单分析、工作流模板检索、AI Eval 数据展示和作品集包装。
 
+## 在线演示
+
+https://christopher47634.github.io/ai-builder-os/
+
 ## 推荐 Topics
 
 ```text

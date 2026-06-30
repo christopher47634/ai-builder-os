@@ -8,6 +8,8 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+在线演示：[https://christopher47634.github.io/ai-builder-os/](https://christopher47634.github.io/ai-builder-os/)
+
 ---
 
 ## 大白话：这个项目有什么用？
@@ -164,13 +166,21 @@ npm run build
 npm run start
 ```
 
+### GitHub Pages 自动部署
+
+这个仓库已经内置 GitHub Actions workflow。推送到 `main` 后，会自动构建静态站点并发布到：
+
+```text
+https://christopher47634.github.io/ai-builder-os/
+```
+
 ### 部署到 Vercel
 
 ```bash
 npx vercel
 ```
 
-也可以把 GitHub 仓库连接到 Vercel，使用默认 Next.js 部署流程。
+也可以把 GitHub 仓库连接到 Vercel，使用默认 Next.js 部署流程。Vercel 部署需要本机或平台账号完成登录授权。
 
 ---
 

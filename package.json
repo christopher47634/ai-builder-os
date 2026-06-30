@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/christopher47634/ai-builder-os.git"
   },
-  "homepage": "https://github.com/christopher47634/ai-builder-os#readme",
+  "homepage": "https://christopher47634.github.io/ai-builder-os/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
