@@ -1,7 +1,14 @@
 {
   "name": "ai-builder-os",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "面向 AI 产品工程师的综合工作台，整合项目库、客户接单、工作流模板和 AI 评测数据。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christopher47634/ai-builder-os.git"
+  },
+  "homepage": "https://github.com/christopher47634/ai-builder-os#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
