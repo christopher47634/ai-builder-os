@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sop.schema.json",
+  "title": "SOPData",
+  "description": "src/data/sop.json：接单标准流程",
+  "type": "object",
+  "required": [
+    "firstContact",
+    "depositRules",
+    "paymentRules",
+    "projectSchedule"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "firstContact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preparation",
+        "steps",
+        "postContact"
+      ],
+      "properties": {
+        "preparation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "tasks"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "duration": {
+                "type": "string"
+              },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        "postContact": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "depositRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scales",
+        "timing",
+        "script",
+        "nonRefundable",
+        "refundable"
+      ],
+      "properties": {
+        "scales": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "range",
+              "ratio",
+              "note"
+            ],
+            "properties": {
+              "range": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ratio": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "timing": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "script": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nonRefundable": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "refundable": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "paymentRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finalPayment",
+        "acceptanceProcess",
+        "collectionScript",
+        "badDebtStrategy"
+      ],
+      "properties": {
+        "finalPayment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acceptanceProcess": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "collectionScript": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "day1",
+            "day3",
+            "day7",
+            "day14"
+          ],
+          "properties": {
+            "day1": {
+              "type": "string",
+              "minLength": 1
+            },
+            "day3": {
+              "type": "string",
+              "minLength": 1
+            },
+            "day7": {
+              "type": "string",
+              "minLength": 1
+            },
+            "day14": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "badDebtStrategy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "range",
+              "action"
+            ],
+            "properties": {
+              "range": {
+                "type": "string",
+                "minLength": 1
+              },
+              "action": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "projectSchedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phases"
+      ],
+      "properties": {
+        "phases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "days",
+              "tasks"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "days": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

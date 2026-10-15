@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "eval/rag_test_cases.schema.json",
+  "title": "EvalCase[] (rag_test_cases)",
+  "description": "src/data/eval/rag_test_cases.json：评测用例",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "scenario_name",
+      "user_input",
+      "background_knowledge",
+      "standard_answer",
+      "wrong_answer_example",
+      "scoring_rubric",
+      "information_to_retrieve",
+      "information_not_to_invent",
+      "risk_points",
+      "pass_criteria",
+      "failure_analysis",
+      "fix_suggestions"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^rag_\\d{3}$"
+      },
+      "scenario_name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "user_input": {
+        "type": "string",
+        "minLength": 1
+      },
+      "background_knowledge": {
+        "type": "string",
+        "minLength": 1
+      },
+      "standard_answer": {
+        "type": "string",
+        "minLength": 1
+      },
+      "wrong_answer_example": {
+        "type": "string",
+        "minLength": 1
+      },
+      "scoring_rubric": {
+        "type": "string",
+        "minLength": 1
+      },
+      "information_to_retrieve": {
+        "type": "string",
+        "minLength": 1
+      },
+      "information_not_to_invent": {
+        "type": "string",
+        "minLength": 1
+      },
+      "risk_points": {
+        "type": "string",
+        "minLength": 1
+      },
+      "pass_criteria": {
+        "type": "string",
+        "minLength": 1
+      },
+      "failure_analysis": {
+        "type": "string",
+        "minLength": 1
+      },
+      "fix_suggestions": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "json.schemas": [
+    { "fileMatch": ["src/data/customer-cases.json"], "url": "./schemas/customer-cases.schema.json" },
+    { "fileMatch": ["src/data/customerProfiles.json"], "url": "./schemas/customer-profiles.schema.json" },
+    { "fileMatch": ["src/data/products.json"], "url": "./schemas/products.schema.json" },
+    { "fileMatch": ["src/data/projects.json"], "url": "./schemas/projects.schema.json" },
+    { "fileMatch": ["src/data/sop.json"], "url": "./schemas/sop.schema.json" },
+    { "fileMatch": ["src/data/workflows.json"], "url": "./schemas/workflows.schema.json" },
+    { "fileMatch": ["src/data/eval/hallucination_cases.json"], "url": "./schemas/eval/hallucination_cases.schema.json" },
+    { "fileMatch": ["src/data/eval/malicious_input_cases.json"], "url": "./schemas/eval/malicious_input_cases.schema.json" },
+    { "fileMatch": ["src/data/eval/multiturn_dialogue_cases.json"], "url": "./schemas/eval/multiturn_dialogue_cases.schema.json" },
+    { "fileMatch": ["src/data/eval/rag_test_cases.json"], "url": "./schemas/eval/rag_test_cases.schema.json" },
+    { "fileMatch": ["src/data/eval/safety_boundary_cases.json"], "url": "./schemas/eval/safety_boundary_cases.schema.json" },
+    { "fileMatch": ["src/data/eval/tool_call_cases.json"], "url": "./schemas/eval/tool_call_cases.schema.json" }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "customer-cases.schema.json",
+  "title": "CustomerCase[]",
+  "description": "src/data/customer-cases.json：客户接单案例",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "customerType",
+      "name",
+      "age",
+      "location",
+      "industry",
+      "description",
+      "painPoint",
+      "willingness",
+      "budget",
+      "difficulty",
+      "quote",
+      "product",
+      "deliveryDays",
+      "communicationTips",
+      "closingScript",
+      "riskPoints",
+      "keyLearning",
+      "customerQuote",
+      "surfaceNeed",
+      "realNeed",
+      "hiddenRisks",
+      "worthTaking",
+      "firstRoundQuestions",
+      "acceptanceCriteria",
+      "biggestRisk",
+      "stopConditions"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "customerType": {
+        "type": "string",
+        "minLength": 1
+      },
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 120,
+        "description": "0 表示描述中未给出年龄"
+      },
+      "location": {
+        "type": "string"
+      },
+      "industry": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "painPoint": {
+        "type": "string"
+      },
+      "willingness": {
+        "type": "string"
+      },
+      "budget": {
+        "type": "string"
+      },
+      "difficulty": {
+        "enum": [
+          "低",
+          "中等",
+          "偏麻烦",
+          "高"
+        ]
+      },
+      "quote": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "low",
+          "standard",
+          "high",
+          "recommended"
+        ],
+        "properties": {
+          "low": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "standard": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "high": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recommended": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "product": {
+        "type": "string"
+      },
+      "deliveryDays": {
+        "type": "string"
+      },
+      "communicationTips": {
+        "type": "string"
+      },
+      "closingScript": {
+        "type": "string"
+      },
+      "riskPoints": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "keyLearning": {
+        "type": "string"
+      },
+      "customerQuote": {
+        "type": "string"
+      },
+      "surfaceNeed": {
+        "type": "string"
+      },
+      "realNeed": {
+        "type": "string"
+      },
+      "hiddenRisks": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "worthTaking": {
+        "type": "boolean"
+      },
+      "firstRoundQuestions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "acceptanceCriteria": {
+        "type": "string"
+      },
+      "biggestRisk": {
+        "type": "string"
+      },
+      "stopConditions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

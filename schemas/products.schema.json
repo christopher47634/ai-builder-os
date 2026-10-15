@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "products.schema.json",
+  "title": "ServiceProduct[]",
+  "description": "src/data/products.json：可售服务产品",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name",
+      "priceRange",
+      "deliveryDays",
+      "difficulty",
+      "suitableForFirst",
+      "targetCustomers",
+      "description",
+      "deliverables",
+      "pricing",
+      "salesPitch",
+      "riskPoints",
+      "antiRisk"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "priceRange": {
+        "type": "string",
+        "minLength": 1
+      },
+      "deliveryDays": {
+        "type": "string",
+        "minLength": 1
+      },
+      "difficulty": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+      },
+      "suitableForFirst": {
+        "type": "boolean"
+      },
+      "targetCustomers": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1
+      },
+      "deliverables": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "pricing": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "basic",
+          "standard",
+          "premium"
+        ],
+        "properties": {
+          "basic": {
+            "type": "number",
+            "minimum": 0
+          },
+          "standard": {
+            "type": "number",
+            "minimum": 0
+          },
+          "premium": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      },
+      "salesPitch": {
+        "type": "string",
+        "minLength": 1
+      },
+      "riskPoints": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "antiRisk": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      }
+    }
+  }
+}
