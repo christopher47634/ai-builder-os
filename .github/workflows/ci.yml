@@ -10,6 +10,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +29,15 @@ jobs:
 
       - name: 单元测试
         run: npm test
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python 抽取脚本测试
+        run: |
+          python -m pip install pytest
+          python -m pytest tests/py -q
 
       - name: 导出 promptfoo tests（仅格式转换，不调用模型）
         run: npm run export:promptfoo

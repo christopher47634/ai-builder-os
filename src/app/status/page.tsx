@@ -1,5 +1,4 @@
-"use client";
-
+// 服务端组件：计数在构建期汇总，不把大 JSON 打进客户端
 import projectsData from "@/data/projects.json";
 import workflowsData from "@/data/workflows.json";
 import customerCasesData from "@/data/customer-cases.json";
@@ -44,10 +43,10 @@ const dataSources = [
 ];
 
 const features = [
-  { name: "项目七维度评分", type: "真实算法", desc: "基于加权公式计算" },
+  { name: "项目七维度评分", type: "真实数据", desc: "来自项目资产库原始评分；数据缺失的项目不展示评分" },
   { name: "工作流搜索筛选", type: "真实数据", desc: `${workflowCount} 条工作流实时过滤` },
   { name: "客户接单分析", type: "规则引擎", desc: "基于关键词匹配的分析逻辑" },
-  { name: "Mock 评测", type: "Mock", desc: "随机生成通过率和分数" },
+  { name: "Mock 评测", type: "Mock", desc: "固定种子生成的模拟分数，未调用任何模型，不代表真实评测" },
   { name: "简历/面试生成", type: "模板填充", desc: "基于项目数据的模板文案" },
   { name: "复制到剪贴板", type: "浏览器 API", desc: "navigator.clipboard.writeText" },
 ];
@@ -149,8 +148,8 @@ export default function StatusPage() {
             <div className="text-xs opacity-50">路由页面</div>
           </div>
           <div className="glass-card p-3 text-center">
-            <div className="text-lg font-bold text-[var(--accent-green)]">0</div>
-            <div className="text-xs opacity-50">TypeScript 错误</div>
+            <div className="text-lg font-bold text-[var(--accent-green)]">CI</div>
+            <div className="text-xs opacity-50">tsc / 测试 / 数据校验</div>
           </div>
           <div className="glass-card p-3 text-center">
             <div className="text-lg font-bold text-[var(--accent)]">{totalEntries}+</div>
@@ -170,7 +169,7 @@ export default function StatusPage() {
           <p><strong>项目名称：</strong>AI Builder OS — AI 项目资产管理系统</p>
           <p><strong>技术栈：</strong>Next.js 16, TypeScript, Tailwind CSS, JSON</p>
           <p><strong>一句话：</strong>独立开发的全栈 AI 项目管理平台，整合 {projectCount} 个项目方案、{workflowCount} 个工作流模板、{caseCount} 个客户案例和 {evalTotal} 条 AI 评测用例</p>
-          <p><strong>亮点：</strong>七维度评分算法、智能接单分析、AI Eval Bench（6 维度评测）、Prompt 工程知识库</p>
+          <p><strong>亮点：</strong>七维度评分展示、规则式接单分析、AI Eval Bench（6 维度评测）、Prompt 工程知识库</p>
         </div>
       </div>
 
@@ -178,13 +177,13 @@ export default function StatusPage() {
       <div className="glass-card p-5">
         <h2 className="text-sm font-semibold mb-4">🎤 面试讲法</h2>
         <div className="text-xs opacity-80 space-y-2">
-          <p><strong>30 秒版本：</strong>&quot;我独立开发了一个 AI Builder OS，把 {projectCount} 个项目方案、{workflowCount} 个工作流、{caseCount} 个客户案例、{evalTotal} 条评测用例整合成一个系统。用 Next.js + TypeScript 构建，深色主题玻璃拟态 UI，支持搜索筛选、评分排序、智能分析。&quot;</p>
+          <p><strong>30 秒版本：</strong>&quot;我独立开发了一个 AI Builder OS，把 {projectCount} 个项目方案、{workflowCount} 个工作流、{caseCount} 个客户案例、{evalTotal} 条评测用例整合成一个系统。用 Next.js + TypeScript 构建，深色主题玻璃拟态 UI，支持搜索筛选、评分排序、规则式分析。&quot;</p>
           <p><strong>2 分钟版本：</strong>见作品集页面的 STAR 讲法</p>
           <p><strong>技术深挖点：</strong></p>
           <ul className="ml-4 space-y-1">
-            <li>• 七维度评分算法如何设计？加权公式、归一化、维度含义</li>
+            <li>• 七维度评分的含义与取数（评分来自原始资料，页面不做加权计算）</li>
             <li>• {workflowCount} 个工作流如何做搜索筛选？useMemo + 实时过滤</li>
-            <li>• 评测系统如何设计？6 个维度、100 条/维度、Mock vs 真实 LLM</li>
+            <li>• 评测系统如何设计？6 个维度、100 条/维度、用例可导出为 promptfoo 格式（当前页面仅为 Mock 演示，未接入模型）</li>
             <li>• 深色主题如何实现？CSS 变量 + Tailwind + glass morphism</li>
           </ul>
         </div>

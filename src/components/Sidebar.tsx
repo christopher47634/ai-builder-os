@@ -13,7 +13,7 @@ const navItems = [
   { href: "/status", label: "最终验收", icon: "✅" },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ summary }: { summary: string }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -28,7 +28,7 @@ export default function Sidebar() {
       <aside className="hidden md:flex flex-col w-[260px] min-h-screen border-r border-[var(--card-border)] bg-[var(--sidebar-bg)] backdrop-blur-xl fixed left-0 top-0 z-40">
         <div className="p-5 border-b border-[var(--card-border)]">
           <h1 className="text-lg font-bold text-[var(--accent)]">AI Builder OS</h1>
-          <p className="text-xs text-[var(--foreground)] opacity-50 mt-1">100项目 · 200工作流 · 100案例 · 600评测</p>
+          <p className="text-xs text-[var(--foreground)] opacity-50 mt-1">{summary}</p>
         </div>
         <nav className="flex-1 p-3 space-y-1">
           {navItems.map((item) => (

@@ -1,5 +1,4 @@
-"use client";
-import { useState, useMemo } from "react";
+// 服务端组件：数据在构建期汇总，大 JSON 不进客户端 bundle
 import Link from "next/link";
 import { AIProject, WorkflowTemplate } from "@/types";
 import projects from "@/data/projects.json";
@@ -16,22 +15,22 @@ const stats = [
 ];
 
 export default function Dashboard() {
-  const topProjects = useMemo(() => {
-    return [...(projects as AIProject[])].sort((a, b) => (b.avgScore || 0) - (a.avgScore || 0)).slice(0, 5);
-  }, []);
+  // 数据缺失的项目没有评分依据，不参与 Top5
+  const topProjects = [...(projects as unknown as AIProject[])]
+    .filter((p) => !p.dataMissing && p.avgScore !== null)
+    .sort((a, b) => (b.avgScore || 0) - (a.avgScore || 0))
+    .slice(0, 5);
 
-  const categoryStats = useMemo(() => {
+  const categoryStats = (() => {
     const cats: Record<string, number> = {};
-    (projects as AIProject[]).forEach((p) => { cats[p.category] = (cats[p.category] || 0) + 1; });
+    (projects as unknown as AIProject[]).forEach((p) => { cats[p.category] = (cats[p.category] || 0) + 1; });
     return Object.entries(cats).sort((a, b) => b[1] - a[1]).slice(0, 8);
-  }, []);
+  })();
 
-  const topWorkflows = useMemo(() => {
-    return [...(workflows as WorkflowTemplate[])].sort((a, b) => {
-      const order: Record<string, number> = { "高": 3, "中": 2, "低": 1 };
-      return (order[b.businessValue] || 0) - (order[a.businessValue] || 0);
-    }).slice(0, 5);
-  }, []);
+  const topWorkflows = [...(workflows as WorkflowTemplate[])].sort((a, b) => {
+    const order: Record<string, number> = { "高": 3, "中": 2, "低": 1 };
+    return (order[b.businessValue] || 0) - (order[a.businessValue] || 0);
+  }).slice(0, 5);
 
   return (
     <div className="space-y-6">
@@ -70,7 +69,7 @@ export default function Dashboard() {
                   <div className="text-sm font-medium truncate">{p.name}</div>
                   <div className="text-xs opacity-50 truncate">{p.category} · 难度 {p.difficulty}⭐</div>
                 </div>
-                <span className="badge badge-blue">{p.avgScore?.toFixed(1)}</span>
+                <span className="badge badge-blue">{p.avgScore?.toFixed(1) ?? "—"}</span>
               </Link>
             ))}
           </div>
