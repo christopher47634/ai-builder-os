@@ -8,7 +8,7 @@
 
 2. **客户接单分析产品设计**：基于 100 个真实客户模拟案例（覆盖 12 种客户类型）设计规则引擎驱动的客户分析系统，输入客户原始描述输出三层需求分析（表面/真实/隐藏）、风险评估、产品包推荐、报价策略和 SOW 草案，将接单决策流程标准化。
 
-3. **AI 评测体系设计**：设计并整合 600 条多维度 AI 评测基准（RAG 检索、多轮对话、工具调用、幻觉检测、安全边界、恶意输入 6 类 × 100 条），定义评测维度、通过标准和报告格式，预留 OpenAI-compatible Provider 接口支持 Mock 和真实 LLM 双模式。
+3. **AI 评测体系设计**：设计并整合 600 条多维度 AI 评测基准（RAG 检索、多轮对话、工具调用、幻觉检测、安全边界、恶意输入 6 类 × 100 条），定义评测维度、通过标准和报告格式，页面内为 Mock 演示（未接入模型），并提供 promptfoo 格式导出。
 
 ### 偏 AI 应用工程
 
@@ -36,7 +36,7 @@
 
 2. **Client Intake Analysis System**: Designed a rule-based client analysis system trained on 100 simulated client cases across 12 client types, generating three-layer needs analysis (surface/real/hidden), risk assessment, product recommendations, pricing strategy, and SOW drafts from raw client descriptions.
 
-3. **AI Evaluation Framework**: Designed and integrated 600 multi-dimensional AI evaluation benchmarks across 6 categories (RAG retrieval, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input), defining evaluation dimensions, pass criteria, and report formats with OpenAI-compatible Provider interface for dual Mock/LLM modes.
+3. **AI Evaluation Framework**: Designed and integrated 600 multi-dimensional AI evaluation benchmarks across 6 categories (RAG retrieval, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input), defining evaluation dimensions, pass criteria, and report formats with an in-page mock demo (no model calls) and a promptfoo export.
 
 ### AI Application Engineering Focus
 
@@ -68,7 +68,7 @@
 
 ## 注意事项
 
-- 不要写"接入了 OpenAI API"，写"预留 OpenAI-compatible Provider 接口"
+- 不要写"接入了 OpenAI API"，写"未接入真实模型，OpenAI-compatible Provider 在 Roadmap 中"
 - 不要写"AI 驱动的客户分析"，写"规则引擎驱动的客户分析"
 - 不要写"1,126 条数据"，写"1,000 条结构化数据"
-- 不要写"600 条评测用例已运行"，写"600 条评测用例，支持 Mock 和 LLM 双模式"
+- 不要写"600 条评测用例已运行"，写"600 条评测用例，页面内为 Mock 演示，可导出 promptfoo 格式自行跑真实评测"

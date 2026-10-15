@@ -4,14 +4,14 @@
 
 ## 项目路径
 
-`C:\Users\25128\Desktop\ai-builder-os\`
+`ai-builder-os/`
 
-WSL: `/mnt/c/Users/25128/Desktop/ai-builder-os/`
+WSL: `ai-builder-os/`
 
 ## 启动方式
 
 ```bash
-cd C:\Users\25128\Desktop\ai-builder-os
+cd ai-builder-os
 npm install
 npm run dev
 ```
@@ -55,7 +55,7 @@ npm run dev
 
 ## 截图路径
 
-`C:\Users\25128\Desktop\ai-builder-os\screenshots\`
+`ai-builder-os/screenshots/`
 
 | 文件 | 页面 | 分辨率 |
 |------|------|--------|
@@ -138,10 +138,10 @@ npm run dev
 - ❌ "600 条评测已运行"
 
 ### 应该写
-- ✅ "预留 OpenAI-compatible Provider 接口"
+- ✅ "未接入真实模型，Provider 在 Roadmap 中"
 - ✅ "规则引擎驱动的客户分析"
 - ✅ "1,000 条结构化数据"
-- ✅ "600 条评测用例，支持 Mock 和 LLM 双模式"
+- ✅ "600 条评测用例，页面内为 Mock 演示，可导出 promptfoo 格式"
 
 ## 面试推荐讲法
 

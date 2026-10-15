@@ -52,7 +52,7 @@ Next.js 16 App Router + TypeScript strict mode + Tailwind CSS。数据层用本�
 
 ### 评测（30秒）
 切到 /eval，展示 6 类统计。
-"600 条评测用例，6 个维度。支持 Mock 和真实 LLM 两种模式。"
+"600 条评测用例，6 个维度。页面里是 Mock 演示，没有调用模型；用例可导出 promptfoo 格式自行跑真实评测。"
 
 ### 作品集（30秒）
 切到 /portfolio，展示简历 bullets 和 STAR 讲法。
@@ -108,7 +108,7 @@ Next.js 16 App Router + TypeScript strict mode + Tailwind CSS。数据层用本�
 "三种方式：第一，作为作品集帮助找工作/接单；第二，接入真实 LLM 后可以作为 SaaS 产品；第三，工作流模板和项目库本身可以作为付费内容。"
 
 **Q12: 接真实 LLM 需要改多少？**
-"客户分析模块需要把规则引擎替换为 LLM 调用，接口已经预留（OpenAI-compatible Provider）。评测模块的 Provider 接口也已定义。预计 1-2 周可以接入。"
+"客户分析模块需要把规则引擎替换为 LLM 调用，目前代码里没有 Provider 接口，需要新增（后端或 serverless 代理保管 Key）。评测模块同理，当前只有 Mock 演示和 promptfoo 导出。"
 
 **Q13: 这个项目和市面上的产品有什么不同？**
 "Dify、FastGPT 是部署平台，这个是决策工具。它帮你在做项目之前做判断：这个项目值不值得做？这个客户值不值得接？用什么方案最划算？"

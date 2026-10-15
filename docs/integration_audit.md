@@ -12,7 +12,7 @@
 
 ### 1. AI项目资产库v1
 
-**路径**: `/mnt/c/Users/25128/Desktop/AI项目资产库v1/`
+**路径**: `<本机资料目录>/AI项目资产库v1/`
 **文件数量**: 24 个 .md 文件
 **总大小**: 1.7 MB
 **数据规模**: 100 个项目 × ~50 字段 × 20 个分类方向
@@ -60,7 +60,7 @@
 
 ### 2. V-warfare-system
 
-**路径**: `/mnt/c/Users/25128/Desktop/V-warfare-system/`
+**路径**: `<本机资料目录>/V-warfare-system/`
 **文件数量**: 15 个 .md 文件（含 3 个 audit_report）
 **总大小**: 896 KB
 **数据规模**: 14 个接单产品、12 类客户画像、100 个客户模拟案例、完整 SOP
@@ -105,7 +105,7 @@
 
 ### 3. ai-workflow-templates
 
-**路径**: `/mnt/c/Users/25128/Desktop/ai-workflow-templates/`
+**路径**: `<本机资料目录>/ai-workflow-templates/`
 **文件数量**: 23 个文件（1 JSON + 21 MD + 1 HTML）
 **总大小**: 3.1 MB
 **数据规模**: 200 个工作流模板 × 15+ 字段
@@ -141,7 +141,7 @@
 
 ### 4. ai-eval-bench
 
-**路径**: `/mnt/c/Users/25128/Desktop/ai-eval-bench/`
+**路径**: `<本机资料目录>/ai-eval-bench/`
 **文件数量**: 50+ 文件（含 node_modules、dist、dashboard）
 **总大小**: 121 MB（主要是 node_modules 和 dashboard/node_modules）
 **数据规模**: 6 个评估套件 × 3 个测试用例/套件 = 18 条测试用例（CLI 跑出的）
@@ -185,7 +185,7 @@
 
 ### 5. ai-clientops-copilot
 
-**路径**: `/mnt/c/Users/25128/Desktop/ai-clientops-copilot/`
+**路径**: `<本机资料目录>/ai-clientops-copilot/`
 **文件数量**: 50+ 文件（含 .next build、node_modules）
 **总大小**: 343 MB（主要是 node_modules 和 .next cache）
 **数据规模**: 7 个页面、4 个 JSON 数据文件
@@ -235,7 +235,7 @@
 
 ### 6. ClientOps-HTML
 
-**路径**: `/mnt/c/Users/25128/Desktop/ClientOps-HTML/`
+**路径**: `<本机资料目录>/ClientOps-HTML/`
 **文件数量**: 38 个文件（6 个 HTML + 静态资源）
 **总大小**: 1.1 MB
 **数据规模**: 与 ai-clientops-copilot 相同（静态导出版）

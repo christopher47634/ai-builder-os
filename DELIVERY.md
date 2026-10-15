@@ -7,14 +7,14 @@
 ## 启动命令
 
 ```bash
-cd C:\Users\25128\Desktop\ai-builder-os
+cd ai-builder-os
 
 # Windows CMD
 npm install
 npm run dev
 
 # WSL
-cd /mnt/c/Users/25128/Desktop/ai-builder-os
+cd ai-builder-os
 npm install
 npm run dev
 ```
@@ -74,7 +74,7 @@ npm run dev      # 开发模式
 
 | 风险 | 级别 | 说明 |
 |------|------|------|
-| 无真实LLM接入 | 低 | Mock Mode设计，Provider接口已预留 |
+| 无真实LLM接入 | 低 | Mock Mode设计；Provider 尚未实现，Roadmap |
 | 无a11y属性 | 低 | P3，后续可补 |
 | 无错误边界 | 低 | 静态JSON导入，基本不会失败 |
 | SOP数据为空 | 低 | sop.json结构不同，可后续补充 |
@@ -89,7 +89,7 @@ npm run dev      # 开发模式
 
 3. **智能客户接单分析引擎**：基于 100 个真实客户模拟案例，开发了规则驱动的客户分析系统，输入客户原话即可输出客户类型判断、真实需求分析、风险评估、产品包推荐、报价策略和 SOW 草案，将接单决策时间从 2 小时缩短至 5 分钟。
 
-4. **AI 评测基准平台**：集成 600 条多维度 AI 评测用例（RAG、多轮对话、工具调用、幻觉检测、安全边界、恶意输入），支持 Mock 和 OpenAI-compatible Provider 双模式，为 AI 应用质量提供结构化评估框架。
+4. **AI 评测基准平台**：集成 600 条多维度 AI 评测用例（RAG、多轮对话、工具调用、幻觉检测、安全边界、恶意输入），页面内评测为 Mock 演示（未接入模型），可导出 promptfoo 格式自行评测，为 AI 应用质量提供结构化评估框架。
 
 5. **全栈技术实现**：使用 Next.js 16 App Router + TypeScript + Tailwind CSS 构建，实现静态生成、响应式布局、深色玻璃拟态主题，1,000 条核心数据本地 JSON 加载，零外部依赖运行。
 
@@ -101,7 +101,7 @@ npm run dev      # 开发模式
 
 3. **Intelligent Client Intake Analysis Engine**: Developed a rule-based client analysis system trained on 100 simulated client cases. Input client's raw message to receive client type classification, true needs analysis, risk assessment, product recommendation, pricing strategy, and SOW draft — reducing intake decision time from 2 hours to 5 minutes.
 
-4. **AI Evaluation Benchmark Platform**: Integrated 600 multi-dimensional AI test cases across 6 categories (RAG, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input) with dual-mode support for Mock and OpenAI-compatible providers, providing a structured quality assessment framework for AI applications.
+4. **AI Evaluation Benchmark Platform**: Integrated 600 multi-dimensional AI test cases across 6 categories (RAG, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input) with an in-page mock demo (no model calls) and a promptfoo export, providing a structured quality assessment framework for AI applications.
 
 5. **Full-Stack Technical Implementation**: Built with Next.js 16 App Router, TypeScript, and Tailwind CSS featuring static generation, responsive layout, dark glass-morphism theme, and 1,000 core data entries loaded from local JSON with zero external runtime dependencies.
 

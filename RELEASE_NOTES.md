@@ -40,7 +40,7 @@
 - 6 evaluation categories × 100 cases each
 - Categories: RAG retrieval, multi-turn dialogue, tool calling, hallucination detection, safety boundaries, malicious input
 - Mock evaluation runner with random results
-- OpenAI-compatible Provider interface (defined, not connected)
+- No OpenAI-compatible Provider yet (roadmap only; no model calls in code)
 - Provider configuration guide
 
 **Portfolio & Resume**

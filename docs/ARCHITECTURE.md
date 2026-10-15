@@ -573,6 +573,8 @@ export function createProvider(mockMode: boolean, opts?: OpenAIProviderOptions):
 
 ## 六、OpenAI-compatible Provider 接口设计
 
+> 注意：本节是设计稿，当前仓库**未实现** Provider，代码中没有任何模型调用；页面评测为固定种子的 Mock 演示。
+
 ### 接口规范
 
 ```typescript
@@ -677,7 +679,7 @@ module.exports = nextConfig;
 
 ### 问题
 
-AI Builder OS 开发在 WSL 环境中，数据资产在 Windows 文件系统 (`/mnt/c/Users/...`)。
+AI Builder OS 开发在 WSL 环境中，数据资产在 Windows 文件系统 （Windows 盘挂载目录）。
 
 ### 方案
 
@@ -693,7 +695,7 @@ AI Builder OS 开发在 WSL 环境中，数据资产在 Windows 文件系统 (`/
 # 从 Windows 桌面资产提取数据到项目目录
 npx tsx scripts/extract-projects.ts
 
-# 输入: /mnt/c/Users/25128/Desktop/AI项目资产库v1/*.md
+# 输入: data-src/AI项目资产库v1/*.md（或用 AI_PROJECTS_SRC 指定）
 # 输出: src/data/projects.json
 ```
 

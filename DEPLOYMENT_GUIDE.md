@@ -10,7 +10,7 @@
 
 ```powershell
 # 打开 PowerShell 或 CMD
-cd C:\Users\25128\Desktop\ai-builder-os
+cd ai-builder-os
 npm install
 npm run dev
 ```
@@ -20,7 +20,7 @@ npm run dev
 ## WSL 启动
 
 ```bash
-cd /mnt/c/Users/25128/Desktop/ai-builder-os
+cd ai-builder-os
 npm install
 npm run dev
 ```
@@ -85,8 +85,8 @@ kill -9 <PID>
 ```
 
 ### Q: WSL 和 Windows 路径问题
-- WSL 路径：/mnt/c/Users/25128/Desktop/ai-builder-os/
-- Windows 路径：C:\Users\25128\Desktop\ai-builder-os\
+- WSL 路径：ai-builder-os/
+- Windows 路径：ai-builder-os/
 - 两者是同一个目录，数据同步
 
 ## 数据更新
@@ -94,7 +94,7 @@ kill -9 <PID>
 如需更新数据，重新运行提取脚本：
 
 ```bash
-cd /mnt/c/Users/25128/Desktop/ai-builder-os
+cd ai-builder-os
 python3 scripts/extract-projects.py
 python3 scripts/extract-customers.py
 ```

@@ -130,12 +130,18 @@
 | Prompt 复制 | 真实功能 | 可直接复制模板内容 |
 | Eval 展示 | 真实数据 | 600 条用例来自结构化数据 |
 | Eval 运行 | Mock 演示 | 当前不是调用真实模型打分 |
-| OpenAI Provider | 预留接口/路线 | 还没有真正接入真实 API |
+| OpenAI Provider | 未实现（Roadmap） | 代码里没有 Provider 接口，也没有任何模型调用；可用 npm run export:promptfoo 导出用例到 promptfoo 自行评测 |
 | 简历/作品集生成 | 模板生成 | 基于已有数据和固定模板生成 |
 
 一句话：**这是一个完整可运行的作品集级 AI 工作台，但不是已经接入真实模型服务的生产级 SaaS。**
 
 ---
+
+## 数据脚本与校验
+
+- `python scripts/extract-customers.py [原始md路径]`、`python scripts/extract-projects.py [原始资料目录]`：从原始资料重新生成 JSON（也可用环境变量 `CUSTOMER_CASES_SRC` / `AI_PROJECTS_SRC`，默认读 `data-src/`，不再写死本机路径）。
+- 原始资料不在仓库里时，用 `python scripts/clean_existing_data.py` 对现有 JSON 做幂等清洗（补全客户类型；内容全空的项目标记 `dataMissing` 且不展示评分）。
+- `npm run validate:data`：JSON Schema + 语义校验；`npm test`：vitest；`python -m pytest tests/py`：抽取脚本单测。CI 里都会跑。
 
 ## 本地运行
 

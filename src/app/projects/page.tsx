@@ -36,7 +36,7 @@ export default function ProjectsPage() {
 Situation: 在AI应用开发项目中，需要解决${p.painPoints?.slice(0, 2).join('、')}的问题
 Task: 设计并实现${p.name}，目标是${p.oneliner?.slice(0, 40)}
 Action: 使用${p.techStack?.frontend || 'Next.js'}构建前端，${p.techStack?.backend || 'Python'}实现后端AI逻辑，${p.needsRAG ? '集成RAG检索增强生成' : '设计核心算法'}，${p.mvpScope?.slice(0, 2).join('和') || '完成MVP开发'}
-Result: 成功交付可演示的产品原型，覆盖${p.coreFeatures?.length || 3}个核心功能，${p.avgScore >= 7.5 ? '获得高分评价' : '验证了技术可行性'}`);
+Result: 成功交付可演示的产品原型，覆盖${p.coreFeatures?.length || 3}个核心功能，验证了技术可行性`);
   };
 
   const generateMVP = (p: AIProject) => {
@@ -149,7 +149,7 @@ npm install && npm run dev
                 <h3 className="text-sm font-semibold truncate">{p.name}</h3>
                 <p className="text-xs opacity-50">{p.category}</p>
               </div>
-              <span className="badge badge-blue ml-2">{p.avgScore?.toFixed(1)}</span>
+              {p.dataMissing ? <span className="badge badge-yellow ml-2">数据缺失</span> : <span className="badge badge-blue ml-2">{p.avgScore?.toFixed(1)}</span>}
             </div>
             <p className="text-xs opacity-70 mb-3 line-clamp-2">{p.oneliner}</p>
             <div className="flex items-center gap-2 mb-3">
@@ -158,7 +158,10 @@ npm install && npm run dev
               {p.needsAgent && <span className="badge badge-purple">Agent</span>}
               {p.needsMultimodal && <span className="badge badge-orange">多模态</span>}
             </div>
-            {/* Score bars */}
+            {/* Score bars（数据缺失的项目没有评分依据，不展示） */}
+            {p.dataMissing ? (
+              <p className="text-[10px] opacity-50">原始资料缺失，暂无评分与详细方案</p>
+            ) : (
             <div className="grid grid-cols-2 gap-x-3 gap-y-1">
               {[
                 { label: "简历", val: p.scores?.resumeValue },
@@ -175,6 +178,7 @@ npm install && npm run dev
                 </div>
               ))}
             </div>
+            )}
           </div>
         ))}
       </div>
@@ -226,6 +230,9 @@ npm install && npm run dev
 
               <div>
                 <h3 className="font-semibold text-[var(--accent)] mb-1">七维度评分</h3>
+                {selectedProject.dataMissing || !selectedProject.scores ? (
+                  <p className="text-xs opacity-60">数据缺失：原始资料里没有这个项目的详细内容，因此不展示评分。</p>
+                ) : (
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     { label: "简历价值", val: selectedProject.scores?.resumeValue },
@@ -233,7 +240,8 @@ npm install && npm run dev
                     { label: "技术成长", val: selectedProject.scores?.techGrowth },
                     { label: "接单价值", val: selectedProject.scores?.freelanceValue },
                     { label: "可开发性", val: selectedProject.scores?.developability },
-
+                    { label: "差异化", val: selectedProject.scores?.differentiation },
+                    { label: "长期复用", val: selectedProject.scores?.longTermReuse },
                   ].map((s) => (
                     <div key={s.label} className="flex items-center gap-2">
                       <span className="text-xs w-16 opacity-60">{s.label}</span>
@@ -244,6 +252,7 @@ npm install && npm run dev
                     </div>
                   ))}
                 </div>
+                )}
               </div>
 
               <div>

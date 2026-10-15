@@ -16,11 +16,11 @@ function generateSections(): Section[] {
       icon: "🇨🇳",
       content: `• 独立设计并开发 AI Builder OS 全栈资产管理系统，整合 100 个 AI 项目方案、200 个工作流模板、100 个客户案例、600 条评测用例，采用 Next.js + TypeScript + Tailwind CSS 技术栈，实现深色主题玻璃拟态 UI
 
-• 构建多维度 AI 项目评估体系，设计七维度评分算法（简历价值、商业价值、技术成长、接单价值、可开发性、差异化、可复用性），覆盖 20 个技术方向，辅助 AI 从业者高效选型
+• 构建多维度 AI 项目评估体系，整理七维度评分体系（简历价值、商业价值、技术成长、接单价值、可开发性、差异化、可复用性），覆盖 20 个技术方向，辅助 AI 从业者高效选型
 
-• 开发智能客户接单分析引擎，基于 100 个真实案例构建需求解析、风险评估、产品匹配和自动报价系统，支持输入客户原话即时生成 SOW 草案和成交话术
+• 开发规则式客户接单分析（关键词规则，无模型调用），结合 100 个客户案例库做风险提示、产品匹配和报价参考，输入客户原话即时生成 SOW 草案模板
 
-• 搭建 AI 评测基础设施（Eval Bench），设计 6 大维度 600 条测试用例（RAG、多轮对话、工具调用、幻觉检测、安全边界、恶意输入），兼容 OpenAI-compatible API，支持 Mock/真实 LLM 双模式
+• 搭建 AI 评测基础设施（Eval Bench），整理 6 大维度 600 条测试用例（RAG、多轮对话、工具调用、幻觉检测、安全边界、恶意输入），提供 promptfoo 格式导出脚本；页面内评测为固定种子的 Mock 演示，尚未接入真实模型
 
 • 基于 200 个工作流模板构建 Prompt 工程知识库，覆盖邮件自动化、客户管理、内容生成等场景，每个工作流包含完整步骤、工具链、API 设计和可复用模块`,
     },
@@ -30,11 +30,11 @@ function generateSections(): Section[] {
       icon: "🇺🇸",
       content: `• Architected and developed AI Builder OS, a full-stack asset management platform integrating 100 AI project blueprints, 200 workflow templates, 100 client cases, and 600 eval test cases using Next.js, TypeScript, and Tailwind CSS with dark-mode glassmorphism UI
 
-• Designed a 7-dimension scoring algorithm for AI project evaluation (resume value, business value, tech growth, freelance value, developability, differentiation, reusability) covering 20 technology verticals to assist AI practitioners in project selection
+• Organized a 7-dimension scoring framework for AI project evaluation (resume value, business value, tech growth, freelance value, developability, differentiation, reusability) covering 20 technology verticals to assist AI practitioners in project selection
 
-• Built an intelligent client intake analysis engine powered by 100 real-world cases, featuring automated need parsing, risk assessment, product matching, and quote generation with SOW draft and closing script output
+• Built a rule-based (keyword rules, no LLM calls) client intake analyzer alongside a 100-case library, producing risk hints, product matching, quote reference and an SOW draft template
 
-• Developed an AI evaluation benchmark (Eval Bench) with 600 test cases across 6 dimensions (RAG, multi-turn dialogue, tool calling, hallucination, safety, malicious input), compatible with OpenAI-compatible APIs and supporting mock/real LLM dual-mode operation
+• Curated an AI evaluation benchmark (Eval Bench) of 600 test cases across 6 dimensions (RAG, multi-turn dialogue, tool calling, hallucination, safety, malicious input) with a promptfoo export script; the in-page run is a seeded mock demo, not yet wired to a real model
 
 • Constructed a Prompt engineering knowledge base from 200 workflow templates spanning email automation, customer management, and content generation, each with complete step-by-step flows, tool chains, API designs, and reusable modules`,
     },
@@ -50,8 +50,8 @@ function generateSections(): Section[] {
 
 【Action — 行动】
 1. 数据工程：从原始 Markdown 文档中提取并结构化 100 个项目方案、200 个工作流、100 个客户案例、600 条评测用例
-2. 系统设计：用 Next.js + TypeScript 构建 7 个功能页面，设计七维度评分算法
-3. 核心功能：开发了智能接单分析（输入客户原话 → 风险评估 + 报价建议）、工作流搜索筛选、评测 Mock 系统
+2. 系统设计：用 Next.js + TypeScript 构建 7 个功能页面，整理七维度评分体系
+3. 核心功能：开发了规则式接单分析（输入客户原话 → 风险提示 + 报价参考）、工作流搜索筛选、评测 Mock 演示（固定种子，未接入模型）
 4. UI/UX：深色主题 + 玻璃拟态设计，响应式布局，移动端适配
 
 【Result — 结果】
@@ -69,8 +69,8 @@ function generateSections(): Section[] {
 
 - 📦 **AI 项目库** — 100 个项目方案，七维度评分，20 个技术方向
 - 🔧 **工作流模板** — 200 个自动化工作流，含 Prompt 模板和工具链
-- 💼 **客户接单** — 100 个真实案例，智能需求分析 + 自动报价
-- 🧪 **AI Eval Bench** — 600 条评测用例，6 大维度，OpenAI-compatible
+- 💼 **客户接单** — 100 个真实案例，规则式需求分析 + 报价参考
+- 🧪 **AI Eval Bench** — 600 条评测用例，6 大维度，支持导出 promptfoo 格式（页面为 Mock 演示）
 - 📝 **作品集生成** — 一键生成简历 bullets、面试话术、README
 - ✅ **验收看板** — 项目状态总览，构建状态检查
 
@@ -132,7 +132,7 @@ src/
 
 - 🏗 Next.js 16 App Router + TypeScript 全栈类型安全
 - 🎨 深色玻璃拟态 UI，响应式设计
-- 📊 七维度评分算法，100 个项目的量化评估
+- 📊 七维度评分，100 个项目的量化评估（数据缺失的项目不展示评分）
 - 🤖 600 条 AI 评测用例，覆盖 6 大安全维度
 - 💡 200 个工作流模板，含完整 Prompt 工程
 
@@ -182,10 +182,10 @@ src/
 
 【1:30-2:30】工作流 + 接单分析
 "工作流模板库有 200 个工作流，点击展开可以看到完整的 Prompt 模板和步骤。"（演示展开详情 + 复制 Prompt）
-"客户接单分析是最实用的功能——输入客户的原话，系统自动分析需求类型、评估风险、匹配产品、生成报价建议。"（演示输入分析）
+"客户接单分析是最实用的功能——输入客户的原话，系统按规则分析需求类型、提示风险、匹配产品、给出报价参考。"（演示输入分析）
 
 【2:30-3:30】评测系统
-"AI Eval Bench 包含 600 条评测用例，覆盖 RAG、多轮对话、工具调用、幻觉检测、安全边界、恶意输入六大维度。"（演示运行 Mock 评测）
+"AI Eval Bench 包含 600 条评测用例，覆盖 RAG、多轮对话、工具调用、幻觉检测、安全边界、恶意输入六大维度。"（演示运行 Mock 评测，并说明这是固定种子的模拟结果，未调用模型）
 
 【3:30-4:30】作品集 + 状态
 "作品集页面可以一键生成中英文简历 bullets、STAR 面试话术、GitHub README。验收状态页面展示整个系统的模块完成度。"
