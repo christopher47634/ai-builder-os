@@ -6663,7 +6663,7 @@
     ],
     "testingStrategy": "- 单元测试：药物匹配算法、提醒时间计算、依从性统计\n- AI质量测试：准备200+标准QA对，评估回答准确性\n- 安全测试：SQL注入、XSS、数据泄露渗透测试\n- 性能测试：并发提醒推送（模拟10万用户同时提醒）\n- E2E测试：完整用户流程（录入→提醒→服药→查询→统计）",
     "deploymentPlan": "- 容器化：Docker + Docker Compose（开发）/ Kubernetes（生产）\n- 数据库：PostgreSQL（RDS/自建主从）\n- 向量库：Qdrant（Docker部署）\n- 缓存：Redis\n- 推送服务：Firebase + APNs\n- CDN：CloudFlare\n- 监控：Prometheus + Grafana",
-    "difficulty": 8,
+    "difficulty": 5,
     "estimatedDuration": "- MVP：2周\n- V1：6周\n- 含数据准备和AI调优额外+2周",
     "businessValueRating": "- 中国慢性病患者超3亿，用药管理是刚需\n- 降低因用药错误导致的医疗事故和再入院率\n- 可对接医院",
     "monetization": "- 基础功能免费（用药提醒+单药查询）\n- 高级版会员：¥12/月（多药交互分析+家庭管理+详细报告）\n- 企业版：面向医院/药企的SaaS服务，按用户数收费",

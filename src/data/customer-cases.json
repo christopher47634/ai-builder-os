@@ -1413,7 +1413,7 @@
     "id": 71,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 35,
     "location": "",
     "industry": "",
     "description": "城市商业银行零售部，员工50-200人，服务本地市民。零售部经理李女士，35岁，负责信用卡和个人贷款业务线。银行刚上线手机App，但客服团队每天接到大量重复咨询（利率、还款方式、办卡条件），人工客服成本高且响应慢。银行没有专职AI团队，IT部门只有3-5人，倾向于采购外部方案。",
@@ -1422,9 +1422,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 4000,
+      "low": 3000,
       "standard": 8000,
-      "high": 3000,
+      "high": 8000,
       "recommended": 8000
     },
     "product": "",
@@ -1452,7 +1452,7 @@
     "id": 72,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 40,
     "location": "",
     "industry": "",
     "description": "中小型私募基金管理公司，管理规模5-20亿，员工15-30人。合规总监王先生，40岁，每月需要向投资者发送月度报告、季度报告。报告格式固定但数据来源多样（净值、持仓、市场回顾、策略说明），目前由研究员手工编写，每份报告耗时2-3天。公司有预算意识，但IT能力弱。",
@@ -1461,9 +1461,9 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 6000,
+      "low": 1000,
       "standard": 1000,
-      "high": 2000,
+      "high": 6000,
       "recommended": 1000
     },
     "product": "",
@@ -1491,7 +1491,7 @@
     "id": 73,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 38,
     "location": "",
     "industry": "",
     "description": "中型财产保险公司分支机构，理赔部门经理陈先生，38岁。每天处理200+车险理赔案件，每个案件需要审核事故照片、维修发票、交警证明等5-8份材料。目前靠人工逐份核对，审核员15人仍经常加班。公司总部在推数字化转型，分支机构有自主采购小工具的权限。",
@@ -1500,9 +1500,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 7000,
+      "low": 3000,
       "standard": 10000,
-      "high": 3000,
+      "high": 10000,
       "recommended": 10000
     },
     "product": "",
@@ -1530,7 +1530,7 @@
     "id": 74,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 30,
     "location": "",
     "industry": "",
     "description": "某区级政府政务服务办公室，科员刘女士，30岁。负责\"一网通办\"平台的运营，每天收到大量市民关于政策的咨询——社保、公积金、创业补贴、人才政策等。现有FAQ页面更新不及时，市民投诉\"找不到答案\"。区里今年有数字化转型预算，但金额有限。",
@@ -1539,9 +1539,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 3000,
+      "low": 2000,
       "standard": 6000,
-      "high": 2000,
+      "high": 6000,
       "recommended": 6000
     },
     "product": "",
@@ -1569,7 +1569,7 @@
     "id": 75,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 28,
     "location": "",
     "industry": "",
     "description": "某街道办事处社区服务中心，工作人员小张，28岁。负责组织社区活动（义诊、文艺汇演、亲子活动、垃圾分类宣传等），每月10-15场活动。活动排期靠Excel管理，通知靠微信群发，经常出现时间冲突、通知遗漏的情况。领导要求\"数字化管理\"，但没有预算请开发公司。",
@@ -1607,7 +1607,7 @@
     "id": 76,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 26,
     "location": "",
     "industry": "",
     "description": "某环保公益组织，全职员工5人，兼职志愿者200+。运营总监小林，26岁，负责志愿者招募和管理。每次活动需要在公众号发招募帖、收集报名、统计人数、分配任务，全靠手动。组织经费来自基金会拨款，预算有限但有\"数字化\"需求。",
@@ -1616,9 +1616,9 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 1200,
+      "low": 500,
       "standard": 2000,
-      "high": 500,
+      "high": 2000,
       "recommended": 2000
     },
     "product": "",
@@ -1645,7 +1645,7 @@
     "id": 77,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 32,
     "location": "",
     "industry": "",
     "description": "某公益基金会，年捐赠收入5000万，员工20人。项目主管赵先生，32岁，需要定期向理事会汇报项目执行情况——资金使用、受益人数、项目进度等。目前用Excel整理数据，做PPT汇报，每次准备要花3-5天。基金会今年有\"数字化建设\"预算。",
@@ -1654,9 +1654,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 3000,
+      "low": 1500,
       "standard": 5000,
-      "high": 1500,
+      "high": 5000,
       "recommended": 5000
     },
     "product": "",
@@ -1683,7 +1683,7 @@
     "id": 78,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 33,
     "location": "",
     "industry": "",
     "description": "某品牌4S店，销售团队20人，月均到店客户300+。销售经理吴先生，33岁。销售顾问每天要跟进大量客户，但经常忘记回访、跟丢客户。CRM系统有但用得不好（销售嫌麻烦不愿意录入）。管理层想要一个\"轻量级\"的客户跟进工具。",
@@ -1721,7 +1721,7 @@
     "id": 79,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 35,
     "location": "",
     "industry": "",
     "description": "某汽车评测自媒体，主理人老周，35岁，在抖音/B站有50万粉丝。每周发布3-4条视频，脚本撰写是最大瓶颈——每条视频脚本需要2-3小时（选题、结构、文案、口播稿）。团队只有2人（老周+剪辑师），产能严重不足。",
@@ -1759,7 +1759,7 @@
     "id": 80,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 40,
     "location": "",
     "industry": "",
     "description": "某连锁宠物医院（3家门店），院长黄女士，40岁。每天接诊60+宠物，病历记录靠手写+Excel，客户回访靠护士打电话。病历查找困难（\"上次那个金毛的检查结果在哪？\"），回访经常遗漏。想要一个数字化管理系统。",
@@ -1768,9 +1768,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 4000,
+      "low": 2000,
       "standard": 8000,
-      "high": 2000,
+      "high": 8000,
       "recommended": 8000
     },
     "product": "",
@@ -1797,7 +1797,7 @@
     "id": 81,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 28,
     "location": "",
     "industry": "",
     "description": "某宠物用品淘宝店，店主小李，28岁。卖猫粮、猫砂、猫玩具等，SKU 200+。每个产品需要详情页图片，目前靠美工一张张做，成本高且慢（一个详情页50-100元）。想要批量生成产品图片和场景图。",
@@ -1835,7 +1835,7 @@
     "id": 82,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 45,
     "location": "",
     "industry": "",
     "description": "某有机蔬菜农场，场长老马，45岁，种植面积200亩。产品供应高端超市和社区团购，价格是普通蔬菜的3-5倍。消费者愿意为\"有机\"付溢价，但需要\"看得见的信任\"。想要一个农产品溯源系统+品牌故事。",
@@ -1844,7 +1844,7 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 2500,
+      "low": 500,
       "standard": 500,
       "high": 2500,
       "recommended": 500
@@ -1873,7 +1873,7 @@
     "id": 83,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 32,
     "location": "",
     "industry": "",
     "description": "某水果电商，老板娘阿芳，32岁，在抖音直播卖水果，粉丝10万。每天直播2-3小时，话术全靠临场发挥，效果不稳定。同时需要拍短视频做引流，但不会写脚本。想要AI帮她生成直播话术和短视频脚本。",
@@ -1882,7 +1882,7 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 1500,
+      "low": 800,
       "standard": 800,
       "high": 2000,
       "recommended": 800
@@ -1911,7 +1911,7 @@
     "id": 84,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 42,
     "location": "",
     "industry": "",
     "description": "某物流园区管理公司，管理50+物流车队，调度主管老郑，42岁。每天调度200+车次，靠对讲机+白板+Excel管理。经常出现\"车到了但货没装好\"\"货好了但车没到\"的混乱。想要一个可视化调度看板。",
@@ -1920,7 +1920,7 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 5000,
+      "low": 3000,
       "standard": 3000,
       "high": 7000,
       "recommended": 3000
@@ -1949,7 +1949,7 @@
     "id": 85,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 36,
     "location": "",
     "industry": "",
     "description": "某中小型仓储公司，仓库面积5000平米，SKU 3000+。仓库主管周女士，36岁。库存管理靠Excel+经验，经常出现\"缺货了才发现\"或\"积压了才处理\"的问题。老板要求\"智能化\"，但预算有限。",
@@ -1996,9 +1996,9 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 3000,
+      "low": 500,
       "standard": 500,
-      "high": 500,
+      "high": 3000,
       "recommended": 500
     },
     "product": "",
@@ -2034,7 +2034,7 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 5000,
+      "low": 3000,
       "standard": 3000,
       "high": 7000,
       "recommended": 3000
@@ -2072,7 +2072,7 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 1500,
+      "low": 800,
       "standard": 800,
       "high": 2000,
       "recommended": 800
@@ -2262,7 +2262,7 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 1500,
+      "low": 800,
       "standard": 800,
       "high": 2000,
       "recommended": 800
@@ -2300,7 +2300,7 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 1000,
+      "low": 800,
       "standard": 800,
       "high": 1500,
       "recommended": 800
@@ -2329,7 +2329,7 @@
     "id": 95,
     "customerType": "未知",
     "name": "",
-    "age": 0,
+    "age": 50,
     "location": "",
     "industry": "",
     "description": "某有机蔬菜合作社，社长老陈，50岁。有200个会员（社区居民），每周配送一次有机蔬菜。会员管理靠Excel，配送通知靠微信群发，经常出现\"漏发\"\"发错\"的情况。想要一个会员管理系统。",
@@ -2452,7 +2452,7 @@
     "budget": "",
     "difficulty": "低",
     "quote": {
-      "low": 1200,
+      "low": 800,
       "standard": 800,
       "high": 1500,
       "recommended": 800
@@ -2566,9 +2566,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 4000,
+      "low": 500,
       "standard": 6000,
-      "high": 500,
+      "high": 6000,
       "recommended": 6000
     },
     "product": "",
@@ -2643,9 +2643,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 3500,
+      "low": 300,
       "standard": 5500,
-      "high": 300,
+      "high": 5500,
       "recommended": 5500
     },
     "product": "",
@@ -2720,9 +2720,9 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 1500,
+      "low": 150,
       "standard": 2500,
-      "high": 150,
+      "high": 2500,
       "recommended": 2500
     },
     "product": "",
@@ -2759,9 +2759,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 1000,
+      "low": 20,
       "standard": 5000,
-      "high": 20,
+      "high": 5000,
       "recommended": 5000
     },
     "product": "",
@@ -2798,9 +2798,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 3000,
+      "low": 500,
       "standard": 8000,
-      "high": 500,
+      "high": 8000,
       "recommended": 8000
     },
     "product": "",
@@ -2837,9 +2837,9 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 1500,
+      "low": 200,
       "standard": 3000,
-      "high": 200,
+      "high": 3000,
       "recommended": 3000
     },
     "product": "",
@@ -2876,9 +2876,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 3000,
+      "low": 400,
       "standard": 5000,
-      "high": 400,
+      "high": 5000,
       "recommended": 5000
     },
     "product": "",
@@ -2915,9 +2915,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 2000,
+      "low": 1500,
       "standard": 4500,
-      "high": 1500,
+      "high": 4500,
       "recommended": 4500
     },
     "product": "",
@@ -2954,9 +2954,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 4000,
+      "low": 500,
       "standard": 6500,
-      "high": 500,
+      "high": 6500,
       "recommended": 6500
     },
     "product": "",
@@ -2993,9 +2993,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 2500,
+      "low": 500,
       "standard": 4000,
-      "high": 500,
+      "high": 4000,
       "recommended": 4000
     },
     "product": "",
@@ -3070,9 +3070,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 3500,
+      "low": 200,
       "standard": 5500,
-      "high": 200,
+      "high": 5500,
       "recommended": 5500
     },
     "product": "",
@@ -3109,9 +3109,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 2000,
+      "low": 500,
       "standard": 3500,
-      "high": 500,
+      "high": 3500,
       "recommended": 3500
     },
     "product": "",
@@ -3148,9 +3148,9 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 1500,
+      "low": 300,
       "standard": 3000,
-      "high": 300,
+      "high": 3000,
       "recommended": 3000
     },
     "product": "",
@@ -3187,9 +3187,9 @@
     "budget": "",
     "difficulty": "高",
     "quote": {
-      "low": 5000,
+      "low": 600,
       "standard": 8000,
-      "high": 600,
+      "high": 8000,
       "recommended": 8000
     },
     "product": "",
@@ -3226,9 +3226,9 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 1200,
+      "low": 100,
       "standard": 2000,
-      "high": 100,
+      "high": 2000,
       "recommended": 2000
     },
     "product": "",
@@ -3265,9 +3265,9 @@
     "budget": "",
     "difficulty": "偏麻烦",
     "quote": {
-      "low": 2000,
+      "low": 150,
       "standard": 3500,
-      "high": 150,
+      "high": 3500,
       "recommended": 3500
     },
     "product": "",
@@ -3304,9 +3304,9 @@
     "budget": "",
     "difficulty": "中等",
     "quote": {
-      "low": 1500,
+      "low": 150,
       "standard": 2500,
-      "high": 150,
+      "high": 2500,
       "recommended": 2500
     },
     "product": "",
