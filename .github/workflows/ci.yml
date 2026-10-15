@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: 数据校验（JSON Schema + 语义检查）
+        run: npm run validate:data
+
+      - name: 类型检查
+        run: npm run typecheck
+
+      - name: 单元测试
+        run: npm test
+
+      - name: 导出 promptfoo tests（仅格式转换，不调用模型）
+        run: npm run export:promptfoo
+
+      - name: 构建
+        run: npm run build
+        env:
+          GITHUB_PAGES: "true"

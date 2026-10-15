@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import { AIProject } from "@/types";
+import { filterProjects } from "@/lib/projects";
 import projectsData from "@/data/projects.json";
 
 const projects = projectsData as AIProject[];
@@ -18,30 +19,10 @@ export default function ProjectsPage() {
   const PAGE_SIZE = 20;
   const [page, setPage] = useState(1);
 
-  const filtered = useMemo(() => {
-    let list = [...projects];
-    if (search) {
-      const q = search.toLowerCase();
-      list = list.filter((p) =>
-        p.name.toLowerCase().includes(q) ||
-        p.oneliner?.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q)
-      );
-    }
-    if (catFilter !== "all") list = list.filter((p) => p.category === catFilter);
-    if (diffFilter > 0) list = list.filter((p) => p.difficulty === diffFilter);
-
-    const sortKeys: Record<string, (p: AIProject) => number> = {
-      avgScore: (p) => p.avgScore || 0,
-      resumeValue: (p) => p.scores?.resumeValue || 0,
-      businessValue: (p) => p.scores?.businessValue || 0,
-      techGrowth: (p) => p.scores?.techGrowth || 0,
-      freelanceValue: (p) => p.scores?.freelanceValue || 0,
-    };
-    const fn = sortKeys[sortBy] || sortKeys.avgScore;
-    list.sort((a, b) => fn(b) - fn(a));
-    return list;
-  }, [search, catFilter, diffFilter, sortBy]);
+  const filtered = useMemo(
+    () => filterProjects(projects, { search, category: catFilter, difficulty: diffFilter, sortBy }),
+    [search, catFilter, diffFilter, sortBy]
+  );
 
   const generateResume = (p: AIProject) => {
     setGeneratedType("简历 Bullet");
