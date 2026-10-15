@@ -29,7 +29,8 @@
       "estimatedDuration",
       "businessValueRating",
       "scores",
-      "avgScore"
+      "avgScore",
+      "dataMissing"
     ],
     "properties": {
       "id": {
@@ -204,61 +205,108 @@
       "resumeTemplate": {
         "type": "string"
       },
-      "scores": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "resumeValue",
-          "businessValue",
-          "techGrowth",
-          "freelanceValue",
-          "developability",
-          "differentiation",
-          "longTermReuse"
-        ],
-        "properties": {
-          "resumeValue": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
-          },
-          "businessValue": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
-          },
-          "techGrowth": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
-          },
-          "freelanceValue": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
-          },
-          "developability": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
-          },
-          "differentiation": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
-          },
-          "longTermReuse": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 10
+      "scores": {},
+      "avgScore": {},
+      "dataMissing": {
+        "type": "boolean",
+        "description": "true = 原始资料缺失，只有名称/功能列表，不展示评分"
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "dataMissing": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "scores": {
+              "type": "null"
+            },
+            "avgScore": {
+              "type": "null"
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "scores": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "resumeValue",
+                "businessValue",
+                "techGrowth",
+                "freelanceValue",
+                "developability",
+                "differentiation",
+                "longTermReuse"
+              ],
+              "properties": {
+                "resumeValue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "businessValue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "techGrowth": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "freelanceValue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "developability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "differentiation": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "longTermReuse": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10
+                }
+              }
+            },
+            "avgScore": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "oneliner": {
+              "type": "string",
+              "minLength": 1
+            },
+            "targetUsers": {
+              "type": "array",
+              "minItems": 1
+            },
+            "painPoints": {
+              "type": "array",
+              "minItems": 1
+            },
+            "mvpScope": {
+              "type": "array",
+              "minItems": 1
+            }
           }
         }
-      },
-      "avgScore": {
-        "type": "number",
-        "minimum": 0,
-        "maximum": 10
       }
-    }
+    ]
   }
 }

@@ -6,6 +6,8 @@ export interface ProjectScores {
   techGrowth: number;
   freelanceValue: number;
   developability: number;
+  differentiation: number;
+  longTermReuse: number;
 }
 
 export interface TechStack {
@@ -23,8 +25,11 @@ export interface AIProject {
   categoryIndex: number;
   oneliner: string;
   difficulty: number;
-  scores: ProjectScores;
-  avgScore: number;
+  /** 数据缺失（dataMissing）的项目为 null，不展示评分 */
+  scores: ProjectScores | null;
+  avgScore: number | null;
+  /** true = 原始资料缺失，只有名称/功能列表 */
+  dataMissing: boolean;
   targetUsers: string[];
   painPoints: string[];
   traditionalSolutionWeakness: string;
@@ -81,7 +86,8 @@ export interface CustomerCase {
   surfaceNeed?: string;
   realNeed?: string;
   hiddenRisks?: string[];
-  worthTaking?: boolean;
+  /** null = 原始资料没有「需求拆解」，无依据不下判断 */
+  worthTaking?: boolean | null;
   firstRoundQuestions?: string[];
   acceptanceCriteria?: string;
   biggestRisk?: string;

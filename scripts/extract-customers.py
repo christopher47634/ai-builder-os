@@ -4,9 +4,42 @@
 import os
 import re
 import json
+import sys
 
-INPUT_FILE = "/mnt/c/Users/25128/Desktop/V-warfare-system/100_客户模拟案例库.md"
-OUTPUT = "/mnt/c/Users/25128/Desktop/ai-builder-os/src/data/customer-cases.json"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from data_rules import (
+    derive_budget, derive_pain_point, derive_willingness,
+    infer_customer_type, parse_amounts, parse_worth,
+)
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUTPUT = os.path.join(ROOT, "src", "data", "customer-cases.json")
+
+TYPE_HEADER_RE = re.compile(
+    r'^#{1,3}\s*(?:客户类型\s*[一二三四五六七八九十\d]+|第?[一二三四五六七八九十\d]+类客户?)\s*[：:]\s*(.+?)\s*$',
+    re.MULTILINE,
+)
+CASE_HEADER_RE = re.compile(r'^#{2,4}\s*案例\s*(\d+)\s*[：:]', re.MULTILINE)
+
+
+def split_cases(content):
+    """返回 [(case_num, case_text, customer_type)]；类型取案例标题之前最近的类型章节标题，
+    找不到章节时按客户画像文本推断。"""
+    type_marks = [(m.start(), m.group(1).strip()) for m in TYPE_HEADER_RE.finditer(content)]
+    heads = list(CASE_HEADER_RE.finditer(content))
+    out = []
+    for i, m in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(content)
+        text = content[m.end():end]
+        ctype = None
+        for pos, name in type_marks:
+            if pos < m.start():
+                ctype = name
+        if not ctype:
+            ctype = infer_customer_type(text[:400])
+        out.append((int(m.group(1)), text, ctype))
+    return out
 
 def extract_case(case_num, case_text, customer_type):
     """Extract a single customer case from markdown text."""
@@ -33,7 +66,7 @@ def extract_case(case_num, case_text, customer_type):
         "surfaceNeed": "",
         "realNeed": "",
         "hiddenRisks": [],
-        "worthTaking": True,
+        "worthTaking": None,
         "firstRoundQuestions": [],
         "acceptanceCriteria": "",
         "biggestRisk": "",
@@ -78,7 +111,7 @@ def extract_case(case_num, case_text, customer_type):
             case["hiddenRisks"] = [risk.group(1).strip()]
         worth = re.search(r'是否值得接[：:]\s*(.*?)(?=\n-|\n\*|$)', needs)
         if worth:
-            case["worthTaking"] = "值得" in worth.group(1) or "可以" in worth.group(1)
+            case["worthTaking"] = parse_worth(worth.group(1))
     
     # Communication strategy
     comm_match = re.search(r'\*?\*?沟通策略\*?\*?\s*\n(.*?)(?=\n\*?\*?报价方案|\n---|\Z)', case_text, re.DOTALL)
@@ -94,17 +127,17 @@ def extract_case(case_num, case_text, customer_type):
     if quote_match:
         quote_text = quote_match.group(1).strip()
         # Extract prices
-        prices = re.findall(r'(\d+)元', quote_text)
+        prices = parse_amounts(quote_text)
         if len(prices) >= 3:
-            case["quote"]["low"] = int(prices[0])
-            case["quote"]["standard"] = int(prices[1])
-            case["quote"]["high"] = int(prices[2])
-            case["quote"]["recommended"] = int(prices[1])
+            case["quote"]["low"] = prices[0]
+            case["quote"]["standard"] = prices[1]
+            case["quote"]["high"] = prices[2]
+            case["quote"]["recommended"] = prices[1]
         elif len(prices) >= 1:
-            case["quote"]["recommended"] = int(prices[0])
-            case["quote"]["low"] = int(prices[0])
-            case["quote"]["standard"] = int(prices[0])
-            case["quote"]["high"] = int(prices[0])
+            case["quote"]["recommended"] = prices[0]
+            case["quote"]["low"] = prices[0]
+            case["quote"]["standard"] = prices[0]
+            case["quote"]["high"] = prices[0]
     
     # Closing script
     closing_match = re.search(r'\*?\*?成交话术\*?\*?\s*\n(.*?)(?=\n\*?\*?交付方案|\n---|\Z)', case_text, re.DOTALL)
@@ -148,6 +181,11 @@ def extract_case(case_num, case_text, customer_type):
         if learn:
             case["keyLearning"] = learn.group(1).strip()
     
+    # 画像/沟通策略里能直接读出的字段
+    case["willingness"] = derive_willingness(case["description"])
+    case["painPoint"] = derive_pain_point(case["description"])
+    case["budget"] = derive_budget(case["communicationTips"])
+
     # Determine difficulty based on quote
     if case["quote"]["recommended"] <= 1500:
         case["difficulty"] = "低"
@@ -160,33 +198,24 @@ def extract_case(case_num, case_text, customer_type):
     
     return case
 
+
+def resolve_source(argv=None):
+    """原始资料路径：命令行第一个参数 > 环境变量 CUSTOMER_CASES_SRC > 仓库内 data-src/（不再写死本机绝对路径）。"""
+    argv = sys.argv[1:] if argv is None else argv
+    return (argv[0] if argv else None) or os.environ.get("CUSTOMER_CASES_SRC") or os.path.join(ROOT, "data-src", "100_客户模拟案例库.md")
+
+
 def main():
+    INPUT_FILE = resolve_source()
+    if not os.path.exists(INPUT_FILE):
+        sys.exit(f"找不到原始资料：{INPUT_FILE}（用参数或 CUSTOMER_CASES_SRC 指定；没有原始资料时改跑 scripts/clean_existing_data.py）")
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Split by case headers
-    # Pattern: ### 案例NN：title
-    case_splits = re.split(r'\n###\s*案例\s*(\d+)[：:]', content)
-    
     all_cases = []
-    current_customer_type = "未知"
-    
-    # Track customer type from ## headers
-    type_sections = re.split(r'\n##\s*客户类型[一二三四五六七八九十\d]+[：:]', content)
-    
-    for i in range(1, len(case_splits), 2):
-        case_num = int(case_splits[i])
-        case_text = case_splits[i + 1] if i + 1 < len(case_splits) else ""
-        
-        # Determine customer type from context
-        # Look backwards in the text for the customer type header
-        type_match = re.search(r'客户类型[^：:]*[：:]\s*([^\n]+)', case_text[:200])
-        if type_match:
-            current_customer_type = type_match.group(1).strip()
-        
-        case = extract_case(case_num, case_text, current_customer_type)
-        all_cases.append(case)
-    
+    for case_num, case_text, ctype in split_cases(content):
+        all_cases.append(extract_case(case_num, case_text, ctype))
+
     print(f"Extracted {len(all_cases)} customer cases")
     
     # Count by type

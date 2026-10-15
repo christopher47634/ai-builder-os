@@ -23,14 +23,19 @@ export function checkQuotes(cases: { id: number; quote: { low: number; standard:
 }
 
 export function checkProjectScores(
-  projects: { id: string; categoryIndex: number; scores: Record<string, number>; avgScore: number }[]
+  projects: { id: string; categoryIndex: number; dataMissing?: boolean; scores: Record<string, number | null> | null; avgScore: number | null }[]
 ): string[] {
   const out: string[] = [];
   for (const p of projects) {
-    const v = Object.values(p.scores);
+    if (Number(p.id.slice(0, 2)) !== p.categoryIndex) out.push(`project ${p.id}: id 前缀与 categoryIndex ${p.categoryIndex} 不符`);
+    if (p.dataMissing || p.scores === null) {
+      if (p.scores !== null || p.avgScore !== null) out.push(`project ${p.id}: 数据缺失项目不得带评分`);
+      continue;
+    }
+    const v = Object.values(p.scores).filter((x): x is number => typeof x === "number");
+    if (v.length === 0 || p.avgScore === null) { out.push(`project ${p.id}: 非缺失项目必须有评分`); continue; }
     const avg = v.reduce((a, b) => a + b, 0) / v.length;
     if (Math.abs(avg - p.avgScore) > 0.06) out.push(`project ${p.id}: avgScore ${p.avgScore} 与 scores 均值 ${avg.toFixed(2)} 不符`);
-    if (Number(p.id.slice(0, 2)) !== p.categoryIndex) out.push(`project ${p.id}: id 前缀与 categoryIndex ${p.categoryIndex} 不符`);
   }
   return out;
 }

@@ -43,3 +43,7 @@ next-env.d.ts
 # build output
 /dist
 /promptfoo/generated/
+
+# python
+__pycache__/
+.pytest_cache/

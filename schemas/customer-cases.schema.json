@@ -44,7 +44,13 @@
       },
       "customerType": {
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "not": {
+          "enum": [
+            "未知"
+          ]
+        },
+        "description": "不得为空或「未知」"
       },
       "name": {
         "type": "string"
@@ -146,7 +152,11 @@
         }
       },
       "worthTaking": {
-        "type": "boolean"
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "null = 原始资料无依据，不下判断"
       },
       "firstRoundQuestions": {
         "type": "array",

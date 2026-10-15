@@ -5,9 +5,14 @@ import os
 import re
 import json
 import glob
+import sys
 
-BASE_DIR = "/mnt/c/Users/25128/Desktop/AI项目资产库v1"
-OUTPUT = "/mnt/c/Users/25128/Desktop/ai-builder-os/src/data/projects.json"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from data_rules import SCORE_KEYS, compute_avg, is_project_empty
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUTPUT = os.path.join(ROOT, "src", "data", "projects.json")
 
 CATEGORY_MAP = {
     "01": ("RAG企业知识库", 1), "02": ("Agent类", 2), "03": ("工作流自动化", 3),
@@ -327,10 +332,8 @@ def extract_project(text, proj_num, category_name, category_idx, filename):
     project["resumeTemplate"] = clean_field(resume, "简历写法")[:500] if resume else ""
 
     # Scores
-    project["scores"] = {
-        "resumeValue": 7, "businessValue": 7, "techGrowth": 7,
-        "freelanceValue": 7, "developability": 7, "differentiation": 7, "longTermReuse": 7,
-    }
+    # 没解析到的维度保持 None，不再伪造 7 分
+    project["scores"] = {k: None for k in SCORE_KEYS}
 
     # Try to extract scores from field 50
     score_text = extract_numbered_field(text, 50, "最终评分")
@@ -345,10 +348,21 @@ def extract_project(text, proj_num, category_name, category_idx, filename):
             if s is not None:
                 project["scores"][key] = s
 
-    score_vals = list(project["scores"].values())
-    project["avgScore"] = round(sum(score_vals) / len(score_vals), 1) if score_vals else 7.0
-
+    finalize_scores(project)
     return project
+
+
+def finalize_scores(project):
+    """统一出口：内容全空 -> 标记数据缺失且不带评分；否则 avgScore 只对真实解析到的维度求平均。"""
+    if is_project_empty(project):
+        project["dataMissing"] = True
+        project["scores"] = None
+        project["avgScore"] = None
+        return
+    project["dataMissing"] = False
+    if project.get("scores") is None:
+        project["scores"] = {k: None for k in SCORE_KEYS}
+    project["avgScore"] = compute_avg(project["scores"])
 
 
 def parse_overview_scores(overview_path):
@@ -392,7 +406,17 @@ def parse_sorting_data(z01_path):
     return sorting
 
 
+
+def resolve_source(argv=None):
+    """原始资料路径：命令行第一个参数 > 环境变量 AI_PROJECTS_SRC > 仓库内 data-src/（不再写死本机绝对路径）。"""
+    argv = sys.argv[1:] if argv is None else argv
+    return (argv[0] if argv else None) or os.environ.get("AI_PROJECTS_SRC") or os.path.join(ROOT, "data-src", "AI项目资产库v1")
+
+
 def main():
+    BASE_DIR = resolve_source()
+    if not os.path.exists(BASE_DIR):
+        sys.exit(f"找不到原始资料：{BASE_DIR}（用参数或 AI_PROJECTS_SRC 指定；没有原始资料时改跑 scripts/clean_existing_data.py）")
     overview_path = os.path.join(BASE_DIR, "00_总览.md")
     z01_path = os.path.join(BASE_DIR, "z01_项目排序与推荐.md")
     overview_scores = parse_overview_scores(overview_path)
@@ -438,17 +462,15 @@ def main():
                 if ov["name"]: project["name"] = ov["name"]
                 if ov["oneliner"]: project["oneliner"] = ov["oneliner"]
                 project["difficulty"] = ov["difficulty"]
-                project["avgScore"] = ov["avgScore"]
 
             name = project["name"]
-            if name in sorting_data:
+            if name in sorting_data and project.get("scores") is not None:
                 sd = sorting_data[name]
                 for key in ["resumeValue", "businessValue", "techGrowth", "freelanceValue", "developability"]:
                     if key in sd:
                         project["scores"][key] = sd[key]
 
-            score_vals = list(project["scores"].values())
-            project["avgScore"] = round(sum(score_vals) / len(score_vals), 1) if score_vals else 7.0
+            finalize_scores(project)
 
             all_projects.append(project)
 

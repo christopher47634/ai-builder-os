@@ -22,3 +22,10 @@ describe("dataChecks", () => {
     expect(checkEvalCases([{ id: "x_1", user_input: ["a"] }, { id: "x_2", user_input: ["b"] }])).toEqual([]);
   });
 });
+
+describe("checkProjectScores：数据缺失项目", () => {
+  it("dataMissing 项目必须没有评分；带分数则报错", () => {
+    expect(checkProjectScores([{ id: "19-001", categoryIndex: 19, dataMissing: true, scores: null, avgScore: null }])).toEqual([]);
+    expect(checkProjectScores([{ id: "19-001", categoryIndex: 19, dataMissing: true, scores: { a: 7 }, avgScore: 7 }])).toHaveLength(1);
+  });
+});

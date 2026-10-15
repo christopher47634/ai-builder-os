@@ -98,7 +98,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "01-002",
@@ -197,7 +198,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "01-003",
@@ -294,7 +296,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "01-004",
@@ -396,7 +399,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "01-005",
@@ -498,7 +502,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "02-001",
@@ -583,7 +588,8 @@
       "differentiation": 7,
       "longTermReuse": 8
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "02-002",
@@ -671,7 +677,8 @@
       "differentiation": 8,
       "longTermReuse": 8
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "02-003",
@@ -760,7 +767,8 @@
       "differentiation": 7,
       "longTermReuse": 8
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "02-004",
@@ -846,7 +854,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.9
+    "avgScore": 6.9,
+    "dataMissing": false
   },
   {
     "id": "02-005",
@@ -934,7 +943,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "03-001",
@@ -1029,7 +1039,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "03-002",
@@ -1125,7 +1136,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "03-003",
@@ -1221,7 +1233,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "03-004",
@@ -1318,7 +1331,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "03-005",
@@ -1415,7 +1429,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "04-001",
@@ -1487,7 +1502,8 @@
       "differentiation": 7,
       "longTermReuse": 8
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "04-002",
@@ -1562,7 +1578,8 @@
       "differentiation": 8,
       "longTermReuse": 8
     },
-    "avgScore": 8.3
+    "avgScore": 8.3,
+    "dataMissing": false
   },
   {
     "id": "04-003",
@@ -1639,7 +1656,8 @@
       "differentiation": 6,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "04-004",
@@ -1716,7 +1734,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "04-005",
@@ -1790,7 +1809,8 @@
       "differentiation": 7,
       "longTermReuse": 8
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "05-001",
@@ -1894,7 +1914,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "05-002",
@@ -2002,7 +2023,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "05-003",
@@ -2111,7 +2133,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "05-004",
@@ -2224,7 +2247,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "05-005",
@@ -2336,7 +2360,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "06-001",
@@ -2424,7 +2449,8 @@
       "differentiation": 6,
       "longTermReuse": 8
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "06-002",
@@ -2519,7 +2545,8 @@
       "differentiation": 8,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "06-003",
@@ -2611,7 +2638,8 @@
       "differentiation": 5,
       "longTermReuse": 8
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "06-004",
@@ -2705,7 +2733,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "06-005",
@@ -2799,7 +2828,8 @@
       "differentiation": 7,
       "longTermReuse": 8
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "07-001",
@@ -2873,7 +2903,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "07-002",
@@ -2951,7 +2982,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "07-003",
@@ -3027,7 +3059,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.3
+    "avgScore": 7.3,
+    "dataMissing": false
   },
   {
     "id": "07-004",
@@ -3104,7 +3137,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.3
+    "avgScore": 7.3,
+    "dataMissing": false
   },
   {
     "id": "07-005",
@@ -3181,7 +3215,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.1
+    "avgScore": 8.1,
+    "dataMissing": false
   },
   {
     "id": "08-001",
@@ -3286,7 +3321,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "08-002",
@@ -3390,7 +3426,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "08-003",
@@ -3497,7 +3534,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "08-004",
@@ -3602,7 +3640,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "08-005",
@@ -3707,7 +3746,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "09-001",
@@ -3808,7 +3848,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "09-002",
@@ -3912,7 +3953,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "09-003",
@@ -4019,7 +4061,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "09-004",
@@ -4122,7 +4165,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "09-005",
@@ -4225,7 +4269,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "10-001",
@@ -4327,7 +4372,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.6
+    "avgScore": 6.6,
+    "dataMissing": false
   },
   {
     "id": "10-002",
@@ -4430,7 +4476,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "10-003",
@@ -4534,7 +4581,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.6
+    "avgScore": 6.6,
+    "dataMissing": false
   },
   {
     "id": "10-004",
@@ -4638,7 +4686,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "10-005",
@@ -4739,7 +4788,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.4
+    "avgScore": 6.4,
+    "dataMissing": false
   },
   {
     "id": "11-001",
@@ -4844,7 +4894,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "11-002",
@@ -4950,7 +5001,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "11-003",
@@ -5061,7 +5113,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.9
+    "avgScore": 6.9,
+    "dataMissing": false
   },
   {
     "id": "11-004",
@@ -5169,7 +5222,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.7
+    "avgScore": 6.7,
+    "dataMissing": false
   },
   {
     "id": "11-005",
@@ -5275,7 +5329,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.4
+    "avgScore": 8.4,
+    "dataMissing": false
   },
   {
     "id": "12-001",
@@ -5385,7 +5440,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "12-002",
@@ -5499,7 +5555,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "12-003",
@@ -5607,7 +5664,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "12-004",
@@ -5714,7 +5772,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "12-005",
@@ -5824,7 +5883,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "13-001",
@@ -5899,7 +5959,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "13-002",
@@ -5974,7 +6035,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "13-003",
@@ -6049,7 +6111,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "13-004",
@@ -6124,7 +6187,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "13-005",
@@ -6199,7 +6263,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "14-001",
@@ -6274,7 +6339,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "14-002",
@@ -6349,7 +6415,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "14-003",
@@ -6424,7 +6491,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "14-004",
@@ -6499,7 +6567,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.1
+    "avgScore": 6.1,
+    "dataMissing": false
   },
   {
     "id": "14-005",
@@ -6574,7 +6643,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "15-001",
@@ -6680,7 +6750,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "15-002",
@@ -6786,7 +6857,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.3
+    "avgScore": 7.3,
+    "dataMissing": false
   },
   {
     "id": "15-003",
@@ -6893,7 +6965,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "15-004",
@@ -7000,7 +7073,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "15-005",
@@ -7110,7 +7184,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.1
+    "avgScore": 7.1,
+    "dataMissing": false
   },
   {
     "id": "16-001",
@@ -7213,7 +7288,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "16-002",
@@ -7317,7 +7393,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.9
+    "avgScore": 6.9,
+    "dataMissing": false
   },
   {
     "id": "16-003",
@@ -7421,7 +7498,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "16-004",
@@ -7524,7 +7602,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "16-005",
@@ -7628,7 +7707,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "17-001",
@@ -7703,7 +7783,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.0
+    "avgScore": 7.0,
+    "dataMissing": false
   },
   {
     "id": "17-002",
@@ -7778,7 +7859,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.4
+    "avgScore": 6.4,
+    "dataMissing": false
   },
   {
     "id": "17-003",
@@ -7853,7 +7935,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "17-004",
@@ -7928,7 +8011,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 6.9
+    "avgScore": 6.9,
+    "dataMissing": false
   },
   {
     "id": "17-005",
@@ -8003,7 +8087,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.3
+    "avgScore": 7.3,
+    "dataMissing": false
   },
   {
     "id": "18-001",
@@ -8078,7 +8163,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "18-002",
@@ -8153,7 +8239,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.3
+    "avgScore": 7.3,
+    "dataMissing": false
   },
   {
     "id": "18-003",
@@ -8228,7 +8315,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.9
+    "avgScore": 7.9,
+    "dataMissing": false
   },
   {
     "id": "18-004",
@@ -8303,7 +8391,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "18-005",
@@ -8378,7 +8467,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.7
+    "avgScore": 7.7,
+    "dataMissing": false
   },
   {
     "id": "19-001",
@@ -8431,16 +8521,9 @@
     "differentiationText": "",
     "allSolutions": [],
     "resumeTemplate": "",
-    "scores": {
-      "resumeValue": 9,
-      "businessValue": 8,
-      "techGrowth": 9,
-      "freelanceValue": 7,
-      "developability": 8,
-      "differentiation": 7,
-      "longTermReuse": 7
-    },
-    "avgScore": 7.9
+    "scores": null,
+    "avgScore": null,
+    "dataMissing": true
   },
   {
     "id": "19-002",
@@ -8493,16 +8576,9 @@
     "differentiationText": "",
     "allSolutions": [],
     "resumeTemplate": "",
-    "scores": {
-      "resumeValue": 8,
-      "businessValue": 9,
-      "techGrowth": 9,
-      "freelanceValue": 8,
-      "developability": 8,
-      "differentiation": 7,
-      "longTermReuse": 7
-    },
-    "avgScore": 8.0
+    "scores": null,
+    "avgScore": null,
+    "dataMissing": true
   },
   {
     "id": "19-003",
@@ -8555,16 +8631,9 @@
     "differentiationText": "",
     "allSolutions": [],
     "resumeTemplate": "",
-    "scores": {
-      "resumeValue": 8,
-      "businessValue": 9,
-      "techGrowth": 8,
-      "freelanceValue": 8,
-      "developability": 8,
-      "differentiation": 7,
-      "longTermReuse": 7
-    },
-    "avgScore": 7.9
+    "scores": null,
+    "avgScore": null,
+    "dataMissing": true
   },
   {
     "id": "19-004",
@@ -8617,16 +8686,9 @@
     "differentiationText": "",
     "allSolutions": [],
     "resumeTemplate": "",
-    "scores": {
-      "resumeValue": 8,
-      "businessValue": 7,
-      "techGrowth": 9,
-      "freelanceValue": 7,
-      "developability": 8,
-      "differentiation": 7,
-      "longTermReuse": 7
-    },
-    "avgScore": 7.6
+    "scores": null,
+    "avgScore": null,
+    "dataMissing": true
   },
   {
     "id": "19-005",
@@ -8679,16 +8741,9 @@
     "differentiationText": "",
     "allSolutions": [],
     "resumeTemplate": "",
-    "scores": {
-      "resumeValue": 9,
-      "businessValue": 9,
-      "techGrowth": 9,
-      "freelanceValue": 8,
-      "developability": 8,
-      "differentiation": 7,
-      "longTermReuse": 7
-    },
-    "avgScore": 8.1
+    "scores": null,
+    "avgScore": null,
+    "dataMissing": true
   },
   {
     "id": "20-001",
@@ -8797,7 +8852,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "20-002",
@@ -8904,7 +8960,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 8.0
+    "avgScore": 8.0,
+    "dataMissing": false
   },
   {
     "id": "20-003",
@@ -9012,7 +9069,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.6
+    "avgScore": 7.6,
+    "dataMissing": false
   },
   {
     "id": "20-004",
@@ -9121,7 +9179,8 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 7.4
+    "avgScore": 7.4,
+    "dataMissing": false
   },
   {
     "id": "20-005",
@@ -9231,6 +9290,7 @@
       "differentiation": 7,
       "longTermReuse": 7
     },
-    "avgScore": 5.9
+    "avgScore": 5.9,
+    "dataMissing": false
   }
 ]
