@@ -1,29 +1,13 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { EvalCase } from "@/types";
+import { runMockEval as runMockEvalSeeded, MOCK_SEED, type MockSuiteResult } from "@/lib/mockEval";
 import ragData from "@/data/eval/rag_test_cases.json";
 import multiturnData from "@/data/eval/multiturn_dialogue_cases.json";
 import toolData from "@/data/eval/tool_call_cases.json";
 import hallucData from "@/data/eval/hallucination_cases.json";
 import safetyData from "@/data/eval/safety_boundary_cases.json";
 import maliciousData from "@/data/eval/malicious_input_cases.json";
-
-interface FailedCase {
-  id: string;
-  name: string;
-  reason: string;
-}
-
-interface MockSuiteResult {
-  suiteId: string;
-  suiteName: string;
-  total: number;
-  passed: number;
-  failed: number;
-  passRate: string;
-  avgScore: string;
-  failedCases: FailedCase[];
-}
 
 interface EvalSuite {
   id: string;
@@ -70,28 +54,7 @@ export default function EvalPage() {
   const totalCases = suites.reduce((s, suite) => s + suite.data.length, 0);
 
   const runMockEval = () => {
-    const results = suites.map((suite) => {
-      const passRate = 0.75 + Math.random() * 0.2;
-      const avgScore = 3.5 + Math.random() * 1.2;
-      const failedCases = suite.data
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 5)
-        .map((c: EvalCase) => ({
-          id: c.id,
-          name: c.scenario_name,
-          reason: ["幻觉输出", "检索失败", "格式错误", "安全违规", "工具调用超时"][Math.floor(Math.random() * 5)],
-        }));
-      return {
-        suiteId: suite.id,
-        suiteName: suite.name,
-        total: suite.data.length,
-        passed: Math.floor(suite.data.length * passRate),
-        failed: Math.ceil(suite.data.length * (1 - passRate)),
-        passRate: (passRate * 100).toFixed(1),
-        avgScore: avgScore.toFixed(2),
-        failedCases,
-      };
-    });
+    const results = runMockEvalSeeded(suites);
     setMockResults(results);
   };
 
@@ -99,7 +62,7 @@ export default function EvalPage() {
     <div className="space-y-5">
       <div>
         <h1 className="text-xl font-bold">AI Eval Bench</h1>
-        <p className="text-sm opacity-50">{totalCases} 条评测用例 · 6 个评测维度 · Mock Mode</p>
+        <p className="text-sm opacity-50">{totalCases} 条评测用例 · 6 个评测维度 · Mock 演示（未接入任何模型）</p>
       </div>
 
       {/* Suite cards */}
@@ -129,10 +92,14 @@ export default function EvalPage() {
       {/* Mock eval button */}
       <div className="glass-card p-5">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-semibold">🧪 运行评测</h2>
+          <h2 className="text-sm font-semibold">🧪 Mock 评测演示</h2>
           <button className="btn-primary" onClick={runMockEval}>
             ▶ 运行 Mock 评测
           </button>
+        </div>
+        <div className="mb-4 rounded-lg border border-yellow-500/40 bg-yellow-500/10 p-3 text-xs">
+          <span className="badge badge-yellow mr-2">MOCK</span>
+          以下数字由固定种子（{MOCK_SEED}）的伪随机数生成，<strong>没有调用任何模型，也没有真正评分</strong>，仅用于演示界面；同一种子每次结果相同。
         </div>
 
         {mockResults && (
@@ -202,43 +169,30 @@ export default function EvalPage() {
         )}
       </div>
 
-      {/* Provider config */}
+      {/* 接入说明（未实现） */}
       <div className="glass-card p-5">
         <div
           className="flex items-center justify-between cursor-pointer"
           onClick={() => setShowProvider(!showProvider)}
         >
-          <h2 className="text-sm font-semibold">⚙️ OpenAI-Compatible Provider 接入</h2>
+          <h2 className="text-sm font-semibold">⚙️ 真实评测怎么做（尚未接入）</h2>
           <span className="text-xs opacity-30">{showProvider ? "▲" : "▼"}</span>
         </div>
         {showProvider && (
           <div className="mt-4 space-y-3 text-sm">
             <div className="glass-card p-4">
-              <h3 className="font-semibold text-[var(--accent)] mb-2">环境变量配置 (.env.local)</h3>
-              <pre className="text-xs font-mono opacity-80 whitespace-pre-wrap">{`# 支持任何 OpenAI-compatible API
-OPENAI_API_KEY=sk-xxx
-OPENAI_BASE_URL=https://api.openai.com/v1
-OPENAI_MODEL=gpt-4o
-
-# 也可用其他 provider
-# OPENAI_BASE_URL=https://api.together.xyz/v1
-# OPENAI_BASE_URL=https://api.anthropic.com/v1
-# OPENAI_BASE_URL=http://localhost:11434/v1  # Ollama`}</pre>
-            </div>
-            <div className="glass-card p-4">
               <h3 className="font-semibold text-[var(--accent)] mb-2">当前状态</h3>
               <div className="flex items-center gap-2">
-                <span className="badge badge-yellow">Mock Mode</span>
-                <span className="text-xs opacity-60">使用模拟数据运行，无需 API Key。配置 .env.local 后可切换为真实 LLM 评测。</span>
+                <span className="badge badge-yellow">仅 Mock</span>
+                <span className="text-xs opacity-60">本站是纯静态站，没有后端也没有 LLM 调用代码，页面不读取任何 API Key。</span>
               </div>
             </div>
             <div className="glass-card p-4">
-              <h3 className="font-semibold text-[var(--accent)] mb-2">接入方式</h3>
+              <h3 className="font-semibold text-[var(--accent)] mb-2">想跑真实评测</h3>
               <ol className="text-xs opacity-80 space-y-1">
-                <li>1. 创建 .env.local 文件，填入 API Key 和 Base URL</li>
-                <li>2. 重启开发服务器：npm run dev</li>
-                <li>3. 点击「运行评测」按钮，将使用真实 LLM 进行评测</li>
-                <li>4. 评测结果将保存到 src/data/eval/results/ 目录</li>
+                <li>1. 执行 npm run export:promptfoo，把本页用例导出为 promptfoo 的 tests 文件（仅格式转换）</li>
+                <li>2. 在本地用 promptfoo 配置自己的模型 provider 并运行</li>
+                <li>3. 在线页面不会也不应持有 API Key</li>
               </ol>
             </div>
           </div>

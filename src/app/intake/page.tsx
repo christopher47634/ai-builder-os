@@ -42,7 +42,7 @@ export default function IntakePage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-xl font-bold">客户接单分析</h1>
-        <p className="text-sm opacity-50">输入客户原话 → AI 分析需求、匹配产品、生成报价</p>
+        <p className="text-sm opacity-50">输入客户原话 → 规则分析（关键词规则，未调用 AI 模型）：判断类型、匹配产品、给出报价参考</p>
       </div>
 
       {/* Input */}
@@ -78,7 +78,10 @@ export default function IntakePage() {
             </div>
             <div>
               <h3 className="font-semibold text-[var(--accent)] mb-2">推荐产品</h3>
-              {result.matchedProducts.map((p: ServiceProduct) => (
+              {result.matchedProducts.length === 0 && (
+                <p className="text-xs opacity-60 mb-2">未命中产品关键词，以下为通用入门产品参考：</p>
+              )}
+              {(result.matchedProducts.length > 0 ? result.matchedProducts : result.fallbackProducts).map((p: ServiceProduct) => (
                 <div key={p.id} className="glass-card p-3 mb-2">
                   <div className="font-medium">{p.name}</div>
                   <div className="text-xs opacity-50">¥{p.priceRange} · {p.deliveryDays}</div>
@@ -130,11 +133,11 @@ export default function IntakePage() {
             <div key={c.id} className="glass-card p-3 cursor-pointer" onClick={() => setSelectedCase(c)}>
               <div className="flex items-start justify-between mb-1">
                 <span className="text-sm font-medium truncate">{c.name || `案例${c.id}`}</span>
-                <span className={`badge ${c.worthTaking ? 'badge-green' : 'badge-yellow'} ml-2 text-[10px]`}>{c.difficulty}</span>
+                <span className={`badge ${c.worthTaking === true ? 'badge-green' : 'badge-yellow'} ml-2 text-[10px]`}>{c.difficulty}</span>
               </div>
               <div className="text-xs opacity-50 mb-1">{c.customerType} · {c.location}</div>
               {c.customerQuote && <p className="text-xs opacity-70 line-clamp-2">"{c.customerQuote}"</p>}
-              {c.quote?.recommended > 0 && <div className="text-xs text-[var(--accent-green)] mt-1">推荐报价: ¥{c.quote.recommended}</div>}
+              {(c.quote?.recommended ?? 0) > 0 && <div className="text-xs text-[var(--accent-green)] mt-1">推荐报价: ¥{c.quote.recommended}</div>}
             </div>
           ))}
         </div>
@@ -165,7 +168,7 @@ export default function IntakePage() {
                   {selectedCase.realNeed && <p className="opacity-80">真实需求: {selectedCase.realNeed}</p>}
                 </div>
               )}
-              {selectedCase.closingScript && (
+              {(selectedCase.quote?.recommended ?? 0) > 0 && (
                 <div>
                   <h3 className="font-semibold text-[var(--accent)] mb-1">💰 报价方案</h3>
                   <div className="grid grid-cols-2 gap-2">
