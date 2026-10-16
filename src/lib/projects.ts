@@ -1,4 +1,42 @@
-import type { AIProject } from "@/types";
+import type { AIProject, ProjectScores } from "@/types";
+
+/** 列表页需要的精简字段（完整数据 700KB+，详情按需加载） */
+export interface ProjectSummary {
+  id: string;
+  name: string;
+  category: string;
+  oneliner: string;
+  difficulty: number;
+  avgScore: number | null;
+  dataMissing: boolean;
+  needsRAG: boolean;
+  needsAgent: boolean;
+  needsMultimodal: boolean;
+  scores: Pick<ProjectScores, "resumeValue" | "businessValue" | "techGrowth" | "freelanceValue"> | null;
+}
+
+export function summarizeProject(p: AIProject): ProjectSummary {
+  return {
+    id: p.id,
+    name: p.name,
+    category: p.category,
+    oneliner: p.oneliner,
+    difficulty: p.difficulty,
+    avgScore: p.avgScore,
+    dataMissing: p.dataMissing,
+    needsRAG: p.needsRAG,
+    needsAgent: p.needsAgent,
+    needsMultimodal: p.needsMultimodal,
+    scores: p.scores
+      ? {
+          resumeValue: p.scores.resumeValue,
+          businessValue: p.scores.businessValue,
+          techGrowth: p.scores.techGrowth,
+          freelanceValue: p.scores.freelanceValue,
+        }
+      : null,
+  };
+}
 
 export interface ProjectFilter {
   search?: string;
@@ -9,7 +47,7 @@ export interface ProjectFilter {
   sortBy?: string;
 }
 
-const sortKeys: Record<string, (p: AIProject) => number> = {
+const sortKeys: Record<string, (p: ProjectSummary) => number> = {
   avgScore: (p) => p.avgScore || 0,
   resumeValue: (p) => p.scores?.resumeValue || 0,
   businessValue: (p) => p.scores?.businessValue || 0,
@@ -18,7 +56,7 @@ const sortKeys: Record<string, (p: AIProject) => number> = {
 };
 
 /** 项目库的搜索 / 分类 / 难度过滤与排序（降序，未知排序键回退 avgScore）。不修改入参。 */
-export function filterProjects(projects: AIProject[], f: ProjectFilter = {}): AIProject[] {
+export function filterProjects<T extends ProjectSummary>(projects: T[], f: ProjectFilter = {}): T[] {
   let list = [...projects];
   if (f.search) {
     const q = f.search.toLowerCase();

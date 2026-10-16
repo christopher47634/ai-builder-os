@@ -38,3 +38,35 @@ describe("filterProjects", () => {
     expect(r.every((p) => p.category === cat)).toBe(true);
   });
 });
+
+import { summarizeProject } from "@/lib/projects";
+import { summarizeWorkflow } from "@/lib/workflows";
+import { worthBadge } from "@/lib/intake";
+import workflowsData from "@/data/workflows.json";
+import type { WorkflowTemplate } from "@/types";
+
+describe("列表摘要", () => {
+  it("项目摘要远小于完整数据且保留列表/搜索/排序所需字段", () => {
+    const full = JSON.stringify(projectsData).length;
+    const sum = JSON.stringify((projectsData as unknown as AIProject[]).map(summarizeProject)).length;
+    expect(sum).toBeLessThan(full / 4);
+    const s = summarizeProject((projectsData as unknown as AIProject[])[0]);
+    expect(Object.keys(s)).not.toContain("promptTemplate");
+    expect(s.name).toBeTruthy();
+  });
+  it("工作流摘要不含大字段", () => {
+    const list = workflowsData as unknown as WorkflowTemplate[];
+    const sum = JSON.stringify(list.map(summarizeWorkflow)).length;
+    expect(sum).toBeLessThan(JSON.stringify(list).length / 4);
+    expect(summarizeWorkflow(list[0])).not.toHaveProperty("promptTemplate");
+  });
+});
+
+describe("worthBadge", () => {
+  it("null/undefined 为中性未判定，false 才是需谨慎", () => {
+    expect(worthBadge(null)).toEqual({ label: "未判定", cls: "badge-neutral" });
+    expect(worthBadge(undefined).label).toBe("未判定");
+    expect(worthBadge(false).cls).toBe("badge-yellow");
+    expect(worthBadge(true).cls).toBe("badge-green");
+  });
+});
