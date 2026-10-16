@@ -2,7 +2,7 @@
 import { useState, useMemo } from "react";
 import { CustomerCase, ServiceProduct } from "@/types";
 import customerCasesData from "@/data/customer-cases.json";
-import { analyzeCustomer, type AnalysisResult } from "@/lib/intake";
+import { analyzeCustomer, worthBadge, type AnalysisResult } from "@/lib/intake";
 import productsData from "@/data/products.json";
 
 const cases = customerCasesData as CustomerCase[];
@@ -133,7 +133,10 @@ export default function IntakePage() {
             <div key={c.id} className="glass-card p-3 cursor-pointer" onClick={() => setSelectedCase(c)}>
               <div className="flex items-start justify-between mb-1">
                 <span className="text-sm font-medium truncate">{c.name || `案例${c.id}`}</span>
-                <span className={`badge ${c.worthTaking === true ? 'badge-green' : 'badge-yellow'} ml-2 text-[10px]`}>{c.difficulty}</span>
+                <span className="flex items-center gap-1 ml-2">
+                  <span className={`badge ${worthBadge(c.worthTaking).cls} text-[10px]`}>{worthBadge(c.worthTaking).label}</span>
+                  <span className="badge badge-neutral text-[10px]">{c.difficulty}</span>
+                </span>
               </div>
               <div className="text-xs opacity-50 mb-1">{c.customerType} · {c.location}</div>
               {c.customerQuote && <p className="text-xs opacity-70 line-clamp-2">"{c.customerQuote}"</p>}
@@ -150,7 +153,7 @@ export default function IntakePage() {
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h2 className="text-lg font-bold">{selectedCase.name || `案例 ${selectedCase.id}`}</h2>
-                <p className="text-xs opacity-50">{selectedCase.customerType} · {selectedCase.location} · {selectedCase.age}岁</p>
+                <p className="text-xs opacity-50">{selectedCase.customerType} · {selectedCase.location} · {selectedCase.age}岁 · 是否值得接：{worthBadge(selectedCase.worthTaking).label}</p>
               </div>
               <button onClick={() => setSelectedCase(null)} className="text-xl opacity-50 hover:opacity-100">✕</button>
             </div>

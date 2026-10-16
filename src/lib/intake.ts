@@ -94,3 +94,10 @@ export function analyzeCustomer(text: string, products: ServiceProduct[]): Analy
 5. 培训与售后支持 (7天)`,
   };
 }
+
+/** 案例「是否值得接」的展示：true 绿 / false 黄 / null（原始资料无依据）用中性「未判定」 */
+export function worthBadge(w: boolean | null | undefined): { label: string; cls: string } {
+  if (w === true) return { label: "值得接", cls: "badge-green" };
+  if (w === false) return { label: "需谨慎", cls: "badge-yellow" };
+  return { label: "未判定", cls: "badge-neutral" };
+}
